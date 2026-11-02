@@ -1,0 +1,801 @@
+@import url("https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&display=swap");
+
+@font-face {
+  font-family: "Inter Display";
+  src: url("/assets/font/InterDisplay-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter Display";
+  src: url("/assets/font/InterDisplay-ExtraBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter Display";
+  src: url("/assets/font/InterDisplay-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter Display";
+  src: url("/assets/font/InterDisplay-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter Display";
+  src: url("/assets/font/InterDisplay-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter Display";
+  src: url("/assets/font/InterDisplay-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import "tailwindcss";
+
+@theme {
+  --color-offwhite: #f6f6f6;
+
+  --font-inter: "Inter Display", sans-serif;
+  --font-chivo: "Chivo Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1435px;
+  width: 100%;
+  margin: auto;
+  padding-inline: 20px;
+}
+
+@layer base {
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* =========================
+   CSS RESET / BASE
+========================= */
+
+/* Box sizing reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin & padding */
+
+/* HTML & body */
+body {
+  height: 100%;
+  font-family: var(--font-inter);
+  overflow-x: hidden;
+  background-color: #ffffff;
+}
+
+.chivo-mono {
+  font-family: "Chivo Mono", monospace;
+  font-style: normal;
+}
+
+/* Remove link underline */
+a {
+  text-decoration: none;
+}
+
+/* Images responsive */
+img,
+picture,
+video,
+canvas {
+  max-width: 100%;
+  display: block;
+}
+
+/* Form elements inherit font */
+
+/* Button cursor */
+button {
+  cursor: pointer;
+}
+
+/* Table reset */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* smooth scrooll */
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Lenis end */
+
+/* Navbar */
+/* ---------- Menu link hover: text roll + arrow swap ---------- */
+.menu-link__label {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.menu-link__text {
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.menu-link__text--clone {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateY(110%);
+}
+
+.menu-link:hover .menu-link__text {
+  transform: translateY(-110%);
+}
+
+.menu-link:hover .menu-link__text--clone {
+  transform: translateY(0);
+}
+
+.menu-link__icon {
+  position: relative;
+  display: block;
+  width: 12px;
+  height: 12px;
+  overflow: hidden;
+}
+
+.menu-link__arrow {
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.menu-link__arrow--clone {
+  position: absolute;
+  inset: 0;
+  transform: translate(-110%, 110%);
+}
+
+.menu-link:hover .menu-link__arrow {
+  transform: translate(110%, -110%);
+}
+
+.menu-link:hover .menu-link__arrow--clone {
+  transform: translate(0, 0);
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .menu-link__text,
+  .menu-link__arrow {
+    transition: none;
+  }
+}
+
+/* Hero section */
+/* ---------- Card sizing (radius = card width gives the big arch curve) ---------- */
+.hero {
+  --card-w: 130px;
+  --card-h: 400px;
+}
+.js .hero__logo img,
+.js .hero__tagline {
+  visibility: hidden;
+}
+
+.js .hero-slider {
+  opacity: 0;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    --card-w: 213px;
+    --card-h: 600px;
+  }
+}
+
+.hero-slider .splide__slide {
+  width: var(--card-w);
+}
+
+.hero-card {
+  position: relative;
+  height: var(--card-h);
+  overflow: hidden;
+  background-color: #eef0f6;
+  isolation: isolate;
+  /* keeps rounded corners clipping video on Safari */
+}
+
+/* odd cards: top-left + bottom-right rounded */
+.hero-card--tl-br {
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+/* even cards: top-right + bottom-left rounded */
+.hero-card--tr-bl {
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+
+.hero-card__media {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  transition: transform 0.5s ease-out;
+  will-change: transform;
+}
+
+/* ---------- Video play / pause button ---------- */
+.video-toggle {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 26px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.video-toggle:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.video-toggle__icon {
+  width: 14px;
+  height: 14px;
+}
+
+.video-toggle__icon--play {
+  display: none;
+}
+
+.video-toggle.is-paused .video-toggle__icon--play {
+  display: block;
+}
+
+.video-toggle.is-paused .video-toggle__icon--pause {
+  display: none;
+}
+
+/* ---------- Social links ---------- */
+.hero__social-link {
+  position: relative;
+  display: inline-block;
+}
+
+/* underline grows from a small dash to full width on hover */
+.hero__social-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 4px;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.hero__social-link:hover::after {
+  width: 100%;
+}
+
+/* text roll */
+.hero__social-label {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.hero__social-text {
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.hero__social-text--clone {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateY(110%);
+}
+
+.hero__social-link:hover .hero__social-text {
+  transform: translateY(-110%);
+}
+
+.hero__social-link:hover .hero__social-text--clone {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__social-link::after,
+  .hero__social-text {
+    transition: none;
+  }
+}
+
+@media (hover: hover) {
+  .hero-card:hover .hero-card__media {
+    transform: scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-card__media {
+    transition: none;
+  }
+}
+
+
+/* About section */
+.about-logo { position: relative; display: block; }
+
+.about-logo__image {
+  display: block;
+  transition: opacity 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* the hover image sits on top, same size as the default one */
+.about-logo__image--hover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+}
+
+@media (hover: hover) {
+  .about-logo:hover .about-logo__image--default { opacity: 0; }
+  .about-logo:hover .about-logo__image--hover   { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-logo__image { transition: none; }
+}
+
+/* Counter animation */
+/* counter  */
+.counter-item {
+  display: inline-flex;
+  overflow: hidden;
+  align-items: baseline;
+}
+
+.counter-digit-col {
+  display: inline-block;
+  overflow: hidden;
+  height: 1em;
+  vertical-align: bottom;
+}
+
+.counter-digit-list {
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+}
+
+.counter-digit-list span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1em;
+}
+
+/* Testimonial slider */
+
+/* =========================================
+   TESTIMONIAL SECTION - BASE
+========================================= */
+
+.testimonial-grid {
+  min-width: 0;
+}
+
+.testimonial-title {
+  min-width: 0;
+}
+
+.testimonial-slider {
+  width: 100%;
+  min-width: 0;
+}
+
+.testimonial-viewport {
+  width: 100%;
+  min-width: 0;
+}
+
+.testimonial-stack {
+  position: relative;
+  width: 100%;
+}
+
+.testimonial-card {
+  width: 100%;
+  min-width: 0;
+}
+
+.testimonial-inner {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   DESKTOP - GSAP STACKING
+========================================= */
+
+@media (min-width: 1024px) {
+
+  .testimonial-slider {
+    overflow: visible;
+  }
+
+  .testimonial-viewport {
+    overflow: visible;
+  }
+
+  .testimonial-stack {
+    display: block;
+  }
+
+  .testimonial-card {
+    width: 100%;
+  }
+
+  .testimonial-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    width: 100%;
+  }
+
+  .testimonial-inner > div {
+    min-width: 0;
+  }
+
+  .testimonial-inner > div.order-1 img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .testimonial-inner blockquote {
+    overflow-wrap: anywhere;
+  }
+}
+
+/* =========================================
+   MOBILE / TABLET - SPLIDE SLIDER
+========================================= */
+
+@media (max-width: 1023px) {
+
+  .testimonial-slider {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .testimonial-viewport.splide__track {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .testimonial-stack.splide__list {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  /* Equal width slides */
+
+  .testimonial-card.splide__slide {
+    display: flex;
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    box-sizing: border-box;
+  }
+
+  /* Card layout */
+
+  .testimonial-inner {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    min-height: 760px;
+    height: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #D7DCE8;
+  }
+
+  /* =====================================
+     IMAGE AREA
+  ===================================== */
+
+  .testimonial-inner > div.order-1 {
+    order: 1;
+    display: block;
+    width: 100%;
+    height: 420px;
+    min-height: 420px;
+    flex: 0 0 420px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .testimonial-inner > div.order-1 > div {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .testimonial-inner > div.order-1 img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* =====================================
+     CONTENT AREA
+  ===================================== */
+
+  .testimonial-inner > div.order-2 {
+    order: 2;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    min-width: 0;
+    min-height: 340px;
+    padding: 20px 24px 24px;
+    gap: 14px;
+    box-sizing: border-box;
+  }
+
+  .testimonial-inner > div.order-2 > div:first-child {
+    width: 100%;
+  }
+
+  .testimonial-inner > div.order-2 > div:last-child {
+    margin-top: 14px;
+  }
+
+  /* Compact content spacing */
+
+  .testimonial-inner .mt-9 {
+    margin-top: 16px;
+  }
+
+  .testimonial-inner .mt-6 {
+    margin-top: 14px;
+  }
+
+  /* Logo */
+
+  .testimonial-inner > div.order-2 > div:first-child > img {
+    display: block;
+    width: auto;
+    height: 26px;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  /* Stars */
+
+  .testimonial-inner > div.order-2 [role="img"] {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* Quote */
+
+  .testimonial-inner blockquote {
+    font-size: 18px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  /* Navigation */
+
+  .testimonial-slider-nav {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .testimonial-slider-nav button {
+    flex-shrink: 0;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .testimonial-inner {
+    min-height: 800px;
+  }
+
+  .testimonial-inner > div.order-1 {
+    height: 460px;
+    min-height: 460px;
+    flex-basis: 460px;
+  }
+
+  .testimonial-inner > div.order-2 {
+    min-height: 340px;
+    padding: 22px 32px 26px;
+  }
+
+  .testimonial-inner blockquote {
+    font-size: 19px;
+    line-height: 1.45;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+  .testimonial-inner {
+    min-height: 740px;
+  }
+
+  .testimonial-inner > div.order-1 {
+    height: 400px;
+    min-height: 400px;
+    flex-basis: 400px;
+  }
+
+  .testimonial-inner > div.order-2 {
+    min-height: 340px;
+    padding: 18px 22px 22px;
+    gap: 12px;
+  }
+
+  .testimonial-inner blockquote {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .testimonial-inner {
+    min-height: 700px;
+  }
+
+  .testimonial-inner > div.order-1 {
+    height: 360px;
+    min-height: 360px;
+    flex-basis: 360px;
+    padding: 8px;
+  }
+
+  .testimonial-inner > div.order-2 {
+    min-height: 340px;
+    padding: 18px 20px 22px;
+    gap: 12px;
+  }
+
+  .testimonial-inner .mt-9 {
+    margin-top: 14px;
+  }
+
+  .testimonial-inner .mt-6 {
+    margin-top: 12px;
+  }
+
+  .testimonial-inner > div.order-2 > div:last-child {
+    margin-top: 14px;
+  }
+
+  .testimonial-inner blockquote {
+    font-size: 17px;
+    line-height: 1.4;
+  }
+}
+
+/* =========================================
+   EXTRA SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+  .testimonial-inner {
+    min-height: 670px;
+  }
+
+  .testimonial-inner > div.order-1 {
+    height: 330px;
+    min-height: 330px;
+    flex-basis: 330px;
+  }
+
+  .testimonial-inner > div.order-2 {
+    min-height: 240px;
+    padding: 16px 16px 20px;
+  }
+
+  .testimonial-inner blockquote {
+    font-size: 16px;
+  }
+}

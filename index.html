@@ -1,0 +1,2281 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tormuz</title>
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+    <link rel="stylesheet" href="assets/css/splide.min.css" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <!-- Backdrop (fades in when menu opens) -->
+    <div
+      class="navbar-backdrop pointer-events-none fixed inset-0 z-40 bg-black/30 opacity-0"
+    ></div>
+    <!-- Navbar -->
+    <header
+      class="site-header fixed inset-x-0 top-6 z-50 flex justify-center px-4 font-inter"
+    >
+      <nav
+        class="navbar w-175 overflow-hidden rounded-lg bg-[#EEF0F6]"
+        aria-label="Main navigation"
+      >
+        <!-- Top bar (fixed 60px height) -->
+        <div
+          class="navbar__bar relative flex h-15 items-center justify-between px-5"
+        >
+          <!-- Toggle -->
+          <button
+            type="button"
+            class="menu-toggle flex h-9 w-15 items-center justify-center rounded"
+            aria-expanded="false"
+            aria-controls="navbar-menu"
+            aria-label="Toggle menu"
+          >
+            <span class="menu-toggle__lines relative block h-3.25 w-10.5">
+              <span
+                class="line-1 absolute left-0 top-0 block h-px w-full bg-neutral-900"
+              ></span>
+              <span
+                class="line-2 absolute left-0 top-3 block h-px w-[70%] bg-neutral-900"
+              ></span>
+            </span>
+          </button>
+
+          <!-- Center logo (PNG) -->
+          <a
+            href="index.html"
+            class="navbar__logo absolute left-1/2 -translate-x-1/2"
+            aria-label="Home"
+          >
+            <img
+              src="/assets/images/nav-logo.svg"
+              alt="Tormuz Logo"
+              class="h-8 w-auto"
+            />
+          </a>
+
+          <!-- CTA -->
+          <a href="#" class="navbar__cta px-4 text-base leading-6 text-[1E1E1E]"
+            >Start</a
+          >
+        </div>
+
+        <!-- Dropdown menu -->
+        <div
+          id="navbar-menu"
+          class="navbar__menu h-0 overflow-hidden"
+          aria-hidden="true"
+        >
+          <div
+            class="navbar__menu-inner grid grid-cols-2 gap-x-4 px-5 pb-3.5 pt-3.5 md:grid-cols-[1fr_194px_320px] lg:grid-cols-[1fr_194px_496px] md:px-6"
+          >
+            <!-- Column 1 -->
+            <ul
+              class="menu-list menu-list--primary flex w-full max-w-42 flex-col"
+            >
+              <li class="menu-item">
+                <a
+                  href="#"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
+                  ><span class="menu-link__label"
+                    ><span class="menu-link__text">Home</span
+                    ><span
+                      class="menu-link__text menu-link__text--clone"
+                      aria-hidden="true"
+                      >Home</span
+                    ></span
+                  ><span class="menu-link__icon"
+                    ><svg
+                      class="menu-link__arrow h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg
+                    ><svg
+                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                ></a>
+              </li>
+              <li class="menu-item">
+                <a
+                  href="#"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
+                  ><span class="menu-link__label"
+                    ><span class="menu-link__text">About</span
+                    ><span
+                      class="menu-link__text menu-link__text--clone"
+                      aria-hidden="true"
+                      >About</span
+                    ></span
+                  ><span class="menu-link__icon"
+                    ><svg
+                      class="menu-link__arrow h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg
+                    ><svg
+                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                ></a>
+              </li>
+              <li class="menu-item">
+                <a
+                  href="#"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
+                  ><span class="menu-link__label"
+                    ><span class="menu-link__text">Project</span
+                    ><span
+                      class="menu-link__text menu-link__text--clone"
+                      aria-hidden="true"
+                      >Project</span
+                    ></span
+                  ><span class="menu-link__icon"
+                    ><svg
+                      class="menu-link__arrow h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg
+                    ><svg
+                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                ></a>
+              </li>
+              <li class="menu-item">
+                <a
+                  href="#"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
+                  ><span class="menu-link__label"
+                    ><span class="menu-link__text">Service</span
+                    ><span
+                      class="menu-link__text menu-link__text--clone"
+                      aria-hidden="true"
+                      >Service</span
+                    ></span
+                  ><span class="menu-link__icon"
+                    ><svg
+                      class="menu-link__arrow h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg
+                    ><svg
+                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                ></a>
+              </li>
+              <li class="menu-item">
+                <a
+                  href="#"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
+                  ><span class="menu-link__label"
+                    ><span class="menu-link__text">Blog</span
+                    ><span
+                      class="menu-link__text menu-link__text--clone"
+                      aria-hidden="true"
+                      >Blog</span
+                    ></span
+                  ><span class="menu-link__icon"
+                    ><svg
+                      class="menu-link__arrow h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg
+                    ><svg
+                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                ></a>
+              </li>
+              <li class="menu-item">
+                <a
+                  href="#"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
+                  ><span class="menu-link__label"
+                    ><span class="menu-link__text">Team</span
+                    ><span
+                      class="menu-link__text menu-link__text--clone"
+                      aria-hidden="true"
+                      >Team</span
+                    ></span
+                  ><span class="menu-link__icon"
+                    ><svg
+                      class="menu-link__arrow h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg
+                    ><svg
+                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                ></a>
+              </li>
+              <li class="menu-item">
+                <a
+                  href="#"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
+                  ><span class="menu-link__label"
+                    ><span class="menu-link__text">Contact</span
+                    ><span
+                      class="menu-link__text menu-link__text--clone"
+                      aria-hidden="true"
+                      >Contact</span
+                    ></span
+                  ><span class="menu-link__icon"
+                    ><svg
+                      class="menu-link__arrow h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg
+                    ><svg
+                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                ></a>
+              </li>
+            </ul>
+
+            <!-- Column 2 -->
+            <ul
+              class="menu-list menu-list--secondary flex w-full max-w-42 flex-col"
+            >
+              <li class="menu-item">
+                <a
+                  href="#"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
+                  ><span class="menu-link__label"
+                    ><span class="menu-link__text">Project Single</span
+                    ><span
+                      class="menu-link__text menu-link__text--clone"
+                      aria-hidden="true"
+                      >Project Single</span
+                    ></span
+                  ><span class="menu-link__icon"
+                    ><svg
+                      class="menu-link__arrow h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg
+                    ><svg
+                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                ></a>
+              </li>
+              <li class="menu-item">
+                <a
+                  href="#"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
+                  ><span class="menu-link__label"
+                    ><span class="menu-link__text">Service Single</span
+                    ><span
+                      class="menu-link__text menu-link__text--clone"
+                      aria-hidden="true"
+                      >Service Single</span
+                    ></span
+                  ><span class="menu-link__icon"
+                    ><svg
+                      class="menu-link__arrow h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg
+                    ><svg
+                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                ></a>
+              </li>
+              <li class="menu-item">
+                <a
+                  href="#"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
+                  ><span class="menu-link__label"
+                    ><span class="menu-link__text">Team Single</span
+                    ><span
+                      class="menu-link__text menu-link__text--clone"
+                      aria-hidden="true"
+                      >Team Single</span
+                    ></span
+                  ><span class="menu-link__icon"
+                    ><svg
+                      class="menu-link__arrow h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg
+                    ><svg
+                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                ></a>
+              </li>
+              <li class="menu-item">
+                <a
+                  href="#"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
+                  ><span class="menu-link__label"
+                    ><span class="menu-link__text">Blog Single</span
+                    ><span
+                      class="menu-link__text menu-link__text--clone"
+                      aria-hidden="true"
+                      >Blog Single</span
+                    ></span
+                  ><span class="menu-link__icon"
+                    ><svg
+                      class="menu-link__arrow h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg
+                    ><svg
+                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                ></a>
+              </li>
+              <li class="menu-item">
+                <a
+                  href="#"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
+                  ><span class="menu-link__label"
+                    ><span class="menu-link__text">Style Guide</span
+                    ><span
+                      class="menu-link__text menu-link__text--clone"
+                      aria-hidden="true"
+                      >Style Guide</span
+                    ></span
+                  ><span class="menu-link__icon"
+                    ><svg
+                      class="menu-link__arrow h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg
+                    ><svg
+                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                ></a>
+              </li>
+              <li class="menu-item">
+                <a
+                  href="#"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
+                  ><span class="menu-link__label"
+                    ><span class="menu-link__text">Change log</span
+                    ><span
+                      class="menu-link__text menu-link__text--clone"
+                      aria-hidden="true"
+                      >Change log</span
+                    ></span
+                  ><span class="menu-link__icon"
+                    ><svg
+                      class="menu-link__arrow h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg
+                    ><svg
+                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                ></a>
+              </li>
+              <li class="menu-item">
+                <a
+                  href="#"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
+                  ><span class="menu-link__label"
+                    ><span class="menu-link__text">Licenses</span
+                    ><span
+                      class="menu-link__text menu-link__text--clone"
+                      aria-hidden="true"
+                      >Licenses</span
+                    ></span
+                  ><span class="menu-link__icon"
+                    ><svg
+                      class="menu-link__arrow h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg
+                    ><svg
+                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                ></a>
+              </li>
+            </ul>
+
+            <!-- Featured image (PNG) -->
+            <div
+              class="menu-media col-span-2 mt-4 h-52 overflow-hidden rounded-lg md:col-span-1 md:mb-2.5 md:mt-1.75 md:h-auto"
+            >
+              <img
+                src="assets/images/navbar-featured.webp"
+                alt="Featured"
+                class="menu-media__image h-full w-full object-cover hover:scale-105 ease-out transition-all duration-500"
+              />
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Banner section -->
+    <section class="hero relative overflow-hidden bg-white">
+      <!-- ================= Top: logo + tagline ================= -->
+      <div
+        class="hero__top relative flex h-110 flex-col items-center px-4 pt-35 md:pt-57.5 md:pb-87.5"
+      >
+        <h1 class="hero__logo shrink-0 overflow-hidden">
+          <img
+            src="assets/images/hero-tormuz-logo.svg"
+            alt="Tormuz"
+            class="h-auto w-[min(705px,82vw)]"
+          />
+        </h1>
+        <p
+          class="hero__tagline mt-4 text-xl font-medium leading-5.5 font-inter text-[#5A6271] md:mt-5 md:text-xl"
+        >
+          The Modern Startup Success Partner
+        </p>
+
+        <!-- Left vertical label -->
+        <span
+          class="hero__label absolute bottom-8 left-8 z-30 font-chivo text-sm font-normal leading-5.25 uppercase text-[#5A6271] rotate-0 [writing-mode:horizontal-tb] md:[writing-mode:vertical-rl] md:rotate-180"
+        >
+          ( Tormuz Labs )
+        </span>
+
+        <!-- Right social links -->
+        <nav
+          class="hero__socials absolute bottom-8 right-6 z-30 flex items-center gap-3 md:gap-6 text-base font-medium font-inter text-[#5A6271]"
+          aria-label="Social links"
+        >
+          <a href="#" class="hero__social-link"
+            ><span class="hero__social-label"
+              ><span class="hero__social-text">LI</span
+              ><span
+                class="hero__social-text hero__social-text--clone"
+                aria-hidden="true"
+                >LI</span
+              ></span
+            ></a
+          >
+          <span aria-hidden="true">/</span>
+          <a href="#" class="hero__social-link"
+            ><span class="hero__social-label"
+              ><span class="hero__social-text">YT</span
+              ><span
+                class="hero__social-text hero__social-text--clone"
+                aria-hidden="true"
+                >YT</span
+              ></span
+            ></a
+          >
+          <span aria-hidden="true">/</span>
+          <a href="#" class="hero__social-link"
+            ><span class="hero__social-label"
+              ><span class="hero__social-text">X</span
+              ><span
+                class="hero__social-text hero__social-text--clone"
+                aria-hidden="true"
+                >X</span
+              ></span
+            ></a
+          >
+        </nav>
+      </div>
+
+      <!-- ================= Slider (Splide) ================= -->
+      <div class="hero-slider splide" aria-label="Featured work">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <!-- 1 · image -->
+            <li class="splide__slide">
+              <div class="hero-card hero-card--tl-br">
+                <img
+                  class="hero-card__media"
+                  src="assets/images/banner-slider-1.webp"
+                  alt=""
+                  loading="lazy"
+                  draggable="false"
+                />
+              </div>
+            </li>
+
+            <!-- 2 · image -->
+            <li class="splide__slide">
+              <div class="hero-card hero-card--tr-bl">
+                <img
+                  class="hero-card__media"
+                  src="assets/images/banner-slider-2.webp"
+                  alt=""
+                  loading="lazy"
+                  draggable="false"
+                />
+              </div>
+            </li>
+
+            <!-- 3 · video -->
+            <li class="splide__slide">
+              <div class="hero-card hero-card--tl-br">
+                <video
+                  class="hero-card__media"
+                  src="assets/videos/banner-slider-video-1.mp4"
+                  data-video="video-3"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                ></video>
+                <button
+                  type="button"
+                  class="video-toggle"
+                  data-video-toggle="video-3"
+                  aria-label="Pause video"
+                >
+                  <svg
+                    class="video-toggle__icon video-toggle__icon--pause"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <rect x="6" y="5" width="4" height="14" rx="0.8" />
+                    <rect x="14" y="5" width="4" height="14" rx="0.8" />
+                  </svg>
+                  <svg
+                    class="video-toggle__icon video-toggle__icon--play"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M7 4.5v15a.8.8 0 0 0 1.2.7l12-7.5a.8.8 0 0 0 0-1.4l-12-7.5A.8.8 0 0 0 7 4.5Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </li>
+
+            <!-- 4 · image -->
+            <li class="splide__slide">
+              <div class="hero-card hero-card--tr-bl">
+                <img
+                  class="hero-card__media"
+                  src="assets/images/banner-slider-4.webp"
+                  alt=""
+                  loading="lazy"
+                  draggable="false"
+                />
+              </div>
+            </li>
+
+            <!-- 5 · image -->
+            <li class="splide__slide">
+              <div class="hero-card hero-card--tl-br">
+                <img
+                  class="hero-card__media"
+                  src="assets/images/banner-slider-5.webp"
+                  alt=""
+                  loading="lazy"
+                  draggable="false"
+                />
+              </div>
+            </li>
+
+            <!-- 6 · image -->
+            <li class="splide__slide">
+              <div class="hero-card hero-card--tr-bl">
+                <img
+                  class="hero-card__media"
+                  src="assets/images/banner-slider-6.webp"
+                  alt=""
+                  loading="lazy"
+                  draggable="false"
+                />
+              </div>
+            </li>
+
+            <!-- 7 · video -->
+            <li class="splide__slide">
+              <div class="hero-card hero-card--tl-br">
+                <video
+                  class="hero-card__media"
+                  src="assets/videos/banner-slider-video-2.mp4"
+                  data-video="video-7"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                ></video>
+                <button
+                  type="button"
+                  class="video-toggle"
+                  data-video-toggle="video-7"
+                  aria-label="Pause video"
+                >
+                  <svg
+                    class="video-toggle__icon video-toggle__icon--pause"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <rect x="6" y="5" width="4" height="14" rx="0.8" />
+                    <rect x="14" y="5" width="4" height="14" rx="0.8" />
+                  </svg>
+                  <svg
+                    class="video-toggle__icon video-toggle__icon--play"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M7 4.5v15a.8.8 0 0 0 1.2.7l12-7.5a.8.8 0 0 0 0-1.4l-12-7.5A.8.8 0 0 0 7 4.5Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </li>
+
+            <!-- 8 · image -->
+            <li class="splide__slide">
+              <div class="hero-card hero-card--tr-bl">
+                <img
+                  class="hero-card__media"
+                  src="assets/images/banner-slider-7.webp"
+                  alt=""
+                  loading="lazy"
+                  draggable="false"
+                />
+              </div>
+            </li>
+
+            <!-- Duplicate contents -->
+            <!-- 1 · image -->
+            <li class="splide__slide">
+              <div class="hero-card hero-card--tl-br">
+                <img
+                  class="hero-card__media"
+                  src="assets/images/banner-slider-1.webp"
+                  alt=""
+                  loading="lazy"
+                  draggable="false"
+                />
+              </div>
+            </li>
+
+            <!-- 2 · image -->
+            <li class="splide__slide">
+              <div class="hero-card hero-card--tr-bl">
+                <img
+                  class="hero-card__media"
+                  src="assets/images/banner-slider-2.webp"
+                  alt=""
+                  loading="lazy"
+                  draggable="false"
+                />
+              </div>
+            </li>
+
+            <!-- 3 · video -->
+            <li class="splide__slide">
+              <div class="hero-card hero-card--tl-br">
+                <video
+                  class="hero-card__media"
+                  src="assets/videos/banner-slider-video-1.mp4"
+                  data-video="video-3"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                ></video>
+                <button
+                  type="button"
+                  class="video-toggle"
+                  data-video-toggle="video-3"
+                  aria-label="Pause video"
+                >
+                  <svg
+                    class="video-toggle__icon video-toggle__icon--pause"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <rect x="6" y="5" width="4" height="14" rx="0.8" />
+                    <rect x="14" y="5" width="4" height="14" rx="0.8" />
+                  </svg>
+                  <svg
+                    class="video-toggle__icon video-toggle__icon--play"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M7 4.5v15a.8.8 0 0 0 1.2.7l12-7.5a.8.8 0 0 0 0-1.4l-12-7.5A.8.8 0 0 0 7 4.5Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </li>
+
+            <!-- 4 · image -->
+            <li class="splide__slide">
+              <div class="hero-card hero-card--tr-bl">
+                <img
+                  class="hero-card__media"
+                  src="assets/images/banner-slider-4.webp"
+                  alt=""
+                  loading="lazy"
+                  draggable="false"
+                />
+              </div>
+            </li>
+
+            <!-- 5 · image -->
+            <li class="splide__slide">
+              <div class="hero-card hero-card--tl-br">
+                <img
+                  class="hero-card__media"
+                  src="assets/images/banner-slider-5.webp"
+                  alt=""
+                  loading="lazy"
+                  draggable="false"
+                />
+              </div>
+            </li>
+
+            <!-- 6 · image -->
+            <li class="splide__slide">
+              <div class="hero-card hero-card--tr-bl">
+                <img
+                  class="hero-card__media"
+                  src="assets/images/banner-slider-6.webp"
+                  alt=""
+                  loading="lazy"
+                  draggable="false"
+                />
+              </div>
+            </li>
+
+            <!-- 7 · video -->
+            <li class="splide__slide">
+              <div class="hero-card hero-card--tl-br">
+                <video
+                  class="hero-card__media"
+                  src="assets/videos/banner-slider-video-2.mp4"
+                  data-video="video-7"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                ></video>
+                <button
+                  type="button"
+                  class="video-toggle"
+                  data-video-toggle="video-7"
+                  aria-label="Pause video"
+                >
+                  <svg
+                    class="video-toggle__icon video-toggle__icon--pause"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <rect x="6" y="5" width="4" height="14" rx="0.8" />
+                    <rect x="14" y="5" width="4" height="14" rx="0.8" />
+                  </svg>
+                  <svg
+                    class="video-toggle__icon video-toggle__icon--play"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M7 4.5v15a.8.8 0 0 0 1.2.7l12-7.5a.8.8 0 0 0 0-1.4l-12-7.5A.8.8 0 0 0 7 4.5Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </li>
+
+            <!-- 8 · image -->
+            <li class="splide__slide">
+              <div class="hero-card hero-card--tr-bl">
+                <img
+                  class="hero-card__media"
+                  src="assets/images/banner-slider-7.webp"
+                  alt=""
+                  loading="lazy"
+                  draggable="false"
+                />
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ================= Side fade overlays (full height) ================= -->
+      <div
+        class="hero__fade hero__fade--left pointer-events-none absolute inset-y-0 left-0 z-20 w-16 bg-linear-to-r from-white from-10% to-transparent md:w-20"
+      ></div>
+      <div
+        class="hero__fade hero__fade--right pointer-events-none absolute inset-y-0 right-0 z-20 w-16 bg-linear-to-l from-white from-10% to-transparent md:w-20"
+      ></div>
+    </section>
+
+    <!-- About section -->
+    <section class="about bg-white py-12 md:py-16 lg:py-20 xl:py-24">
+      <div class="container">
+        <!-- ================= Intro: label + heading ================= -->
+        <div
+          class="about__intro grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-x-6"
+        >
+          <span
+            class="about__label pt-1 font-chivo text-sm font-normal leading-5.25 uppercase text-[#5A6271] md:col-span-3 lg:col-span-4"
+          >
+            About us
+          </span>
+
+          <h2
+            class="about__heading md:col-span-9 lg:col-span-8 font-inter text-[32px] sm:text-[36px] md:text-[42px] lg:text-[48px] font-medium leading-8.75 sm:leading-10 md:leading-11.5 lg:leading-13 text-[#A5A5A5]"
+          >
+            We’re Tormuz™ — a startup partner empowering bold businesses,
+            building scalable solutions, and driving growth through innovation.
+          </h2>
+        </div>
+
+        <!-- ================= Logo marquee ================= -->
+        <div
+          class="about__marquee relative mt-10 border-b border-[#d0d8e4] pb-6 md:mt-32.5"
+        >
+          <div
+            class="about-logo-marquee splide"
+            aria-label="Brands we have worked with"
+          >
+            <div class="splide__track">
+              <ul class="splide__list">
+                <!-- Set 1 -->
+                <li class="splide__slide">
+                  <div class="about-logo">
+                    <img
+                      src="assets/images/slider-logo-1.svg"
+                      alt="Elio"
+                      class="about-logo__image about-logo__image--default h-5 w-auto md:h-6"
+                      draggable="false"
+                    />
+                    <img
+                      src="assets/images/slider-logo-1-hover.svg"
+                      alt=""
+                      aria-hidden="true"
+                      class="about-logo__image about-logo__image--hover"
+                      draggable="false"
+                    />
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="about-logo">
+                    <img
+                      src="assets/images/slider-logo-2.svg"
+                      alt="Relax"
+                      class="about-logo__image about-logo__image--default h-5 w-auto md:h-6"
+                      draggable="false"
+                    />
+                    <img
+                      src="assets/images/slider-logo-2-hover.svg"
+                      alt=""
+                      aria-hidden="true"
+                      class="about-logo__image about-logo__image--hover"
+                      draggable="false"
+                    />
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="about-logo">
+                    <img
+                      src="assets/images/slider-logo-3.svg"
+                      alt="Verse"
+                      class="about-logo__image about-logo__image--default h-5 w-auto md:h-6"
+                      draggable="false"
+                    />
+                    <img
+                      src="assets/images/slider-logo-3-hover.svg"
+                      alt=""
+                      aria-hidden="true"
+                      class="about-logo__image about-logo__image--hover"
+                      draggable="false"
+                    />
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="about-logo">
+                    <img
+                      src="assets/images/slider-logo-4.svg"
+                      alt="Zeer"
+                      class="about-logo__image about-logo__image--default h-5 w-auto md:h-6"
+                      draggable="false"
+                    />
+                    <img
+                      src="assets/images/slider-logo-4-hover.svg"
+                      alt=""
+                      aria-hidden="true"
+                      class="about-logo__image about-logo__image--hover"
+                      draggable="false"
+                    />
+                  </div>
+                </li>
+
+                <!-- Set 2 (repeat so the loop always has enough width) -->
+                <li class="splide__slide">
+                  <div class="about-logo">
+                    <img
+                      src="assets/images/slider-logo-1.svg"
+                      alt="Elio"
+                      class="about-logo__image about-logo__image--default h-5 w-auto md:h-6"
+                      draggable="false"
+                    />
+                    <img
+                      src="assets/images/slider-logo-1-hover.svg"
+                      alt=""
+                      aria-hidden="true"
+                      class="about-logo__image about-logo__image--hover"
+                      draggable="false"
+                    />
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="about-logo">
+                    <img
+                      src="assets/images/slider-logo-2.svg"
+                      alt="Relax"
+                      class="about-logo__image about-logo__image--default h-5 w-auto md:h-6"
+                      draggable="false"
+                    />
+                    <img
+                      src="assets/images/slider-logo-2-hover.svg"
+                      alt=""
+                      aria-hidden="true"
+                      class="about-logo__image about-logo__image--hover"
+                      draggable="false"
+                    />
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="about-logo">
+                    <img
+                      src="assets/images/slider-logo-3.svg"
+                      alt="Verse"
+                      class="about-logo__image about-logo__image--default h-5 w-auto md:h-6"
+                      draggable="false"
+                    />
+                    <img
+                      src="assets/images/slider-logo-3-hover.svg"
+                      alt=""
+                      aria-hidden="true"
+                      class="about-logo__image about-logo__image--hover"
+                      draggable="false"
+                    />
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="about-logo">
+                    <img
+                      src="assets/images/slider-logo-4.svg"
+                      alt="Zeer"
+                      class="about-logo__image about-logo__image--default h-5 w-auto md:h-6"
+                      draggable="false"
+                    />
+                    <img
+                      src="assets/images/slider-logo-4-hover.svg"
+                      alt=""
+                      aria-hidden="true"
+                      class="about-logo__image about-logo__image--hover"
+                      draggable="false"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Left / right white fade overlays -->
+          <div
+            class="about__fade about__fade--left pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white from-10% to-transparent md:w-32"
+          ></div>
+          <div
+            class="about__fade about__fade--right pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white from-10% to-transparent md:w-32"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project section -->
+    <section class="bg-white">
+      <div class="container">
+        <!-- Section Header -->
+        <div
+          class="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-10 md:mb-14 gap-4"
+        >
+          <h2
+            class="heading-reveal font-inter text-[#1E1E1E] text-[38px] md:text-[48px] lg:text-[60px] font-medium leading-12 md:leading-14 lg:leading-16.5 max-w-92.5"
+          >
+            Business Case Studies.
+          </h2>
+          <a
+            href="#"
+            class="cubic-btn relative group inline-flex items-center gap-1 font-inter text-[#000000] text-base font-medium leading-6 pb-0.5 transition-colors"
+          >
+            <!-- Text roll container -->
+            <span class="btn-text relative block overflow-hidden py-1">
+              <!-- Original Text -->
+              <span class="original block split-text">View All Project</span>
+              <!-- Cloned Text -->
+              <span class="clone absolute left-0 top-1 block split-text"
+                >View All Project</span
+              >
+            </span>
+
+            <!-- Plus icon -->
+            <siv class="plus-icon inline-block">
+              <img
+                src="assets/images/plus-icon.svg"
+                alt="plus icon"
+                class="w-full h-full object-contain shrink-0"
+              />
+            </siv>
+
+            <!-- Bottom Border Line -->
+            <span
+              class="absolute bottom-0 left-0 h-px w-7 bg-[#000000] transition-all duration-600 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:w-full"
+            ></span>
+          </a>
+        </div>
+
+        <!-- Projects Grid -->
+        <div
+          class="project-grid grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 lg:gap-8"
+        >
+          <!-- Card 1 -->
+          <a
+            href="#"
+            class="project-card group block cursor-pointer bg-[#EEF0F6] p-2 md:p-3 rounded-3xl"
+          >
+            <div class="relative w-full rounded-3xl overflow-hidden">
+              <img
+                src="assets/images/project-thumbnail-1.webp"
+                alt="Digital Transformation"
+                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+
+              <!-- Hover Overlay -->
+              <div
+                class="absolute inset-0 bg-black/20 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center"
+              >
+                <div
+                  class="flex items-center justify-center transform scale-75 group-hover:scale-100 transition-transform duration-300"
+                >
+                  <img
+                    src="assets/images/relax.svg"
+                    alt="relax"
+                    class="w-full h-full object-contain transform group-hover:translate-x-0.5 transition-transform"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Meta -->
+            <div
+              class="flex justify-between items-center mt-4 px-4 py-1 sm:py-2 font-chivo text-sm font-normal leading-5.25 uppercase text-[#1E1E1E]"
+            >
+              <span class="">Digital Transformation</span>
+              <span class="text-[#5A6271]">06.28</span>
+            </div>
+          </a>
+
+          <!-- Card 2 -->
+          <a
+            href="#"
+            class="project-card group block cursor-pointer bg-[#EEF0F6] p-2 md:p-3 rounded-3xl"
+          >
+            <div class="relative w-full rounded-3xl overflow-hidden">
+              <img
+                src="assets/images/project-thumbnail-2.webp"
+                alt="Startup Strategy"
+                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+
+              <!-- Hover Overlay -->
+              <div
+                class="absolute inset-0 bg-black/20 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center"
+              >
+                <div
+                  class="flex items-center justify-center transform scale-75 group-hover:scale-100 transition-transform duration-300"
+                >
+                  <img
+                    src="assets/images/relax.svg"
+                    alt="relax"
+                    class="w-full h-full object-contain transform group-hover:translate-x-0.5 transition-transform"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Meta -->
+            <div
+              class="flex justify-between items-center mt-4 px-4 py-1 sm:py-2 font-chivo text-sm font-normal leading-5.25 uppercase text-[#1E1E1E]"
+            >
+              <span class="">Startup Strategy</span>
+              <span class="text-[#5A6271]">05.26</span>
+            </div>
+          </a>
+
+          <!-- Card 3 (Full Width) -->
+          <a
+            href="#"
+            class="project-card group block cursor-pointer bg-[#EEF0F6] p-2 md:p-3 rounded-3xl md:col-span-2"
+          >
+            <div class="relative w-full rounded-3xl overflow-hidden">
+              <img
+                src="assets/images/project-thumbnail-3.webp"
+                alt="Startup Strategy"
+                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+
+              <!-- Hover Overlay -->
+              <div
+                class="absolute inset-0 bg-black/20 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center"
+              >
+                <div
+                  class="flex items-center justify-center transform scale-75 group-hover:scale-100 transition-transform duration-300"
+                >
+                  <img
+                    src="assets/images/relax.svg"
+                    alt="relax"
+                    class="w-full h-full object-contain transform group-hover:translate-x-0.5 transition-transform"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Meta -->
+            <div
+              class="flex justify-between items-center mt-4 px-4 py-1 sm:py-2 font-chivo text-sm font-normal leading-5.25 uppercase text-[#1E1E1E]"
+            >
+              <span class="">Startup Strategy</span>
+              <span class="text-[#5A6271]">08.26</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service section -->
+    <section
+      id="services"
+      class="section home-service relative flex items-center overflow-hidden bg-white py-12 md:py-16"
+    >
+      <div class="service-inner w-full">
+        <div class="container">
+          <!-- Title area -->
+          <div class="service-title-wrap relative">
+            <!-- Background shade image -->
+            <img
+              src="assets/images/service-bg-shade.webp"
+              alt=""
+              aria-hidden="true"
+              class="pointer-events-none absolute left-1/2 top-0 z-0 w-full max-w-none -translate-x-1/2 select-none object-contain"
+            />
+
+            <div
+              class="service-title _01 relative z-10 flex items-center justify-between font-chivo text-sm font-normal leading-5.25 uppercase text-[#5A6271] mb-7.5 md:mb-12.5 lg:mb-15"
+            >
+              <div class="service-title-left">
+                <div data-animation="slide-up-reveal">Provided services</div>
+              </div>
+
+              <div data-animation="slide-up-reveal" class="service-title-right">
+                <div>Est. 2026</div>
+              </div>
+            </div>
+
+            <!-- Heading -->
+            <div
+              class="service-title-02 relative z-10 mb-12.5 md:mb-17.5 lg:mb-20"
+            >
+              <h2
+                class="heading-reveal text-center font-inter text-[#1E1E1E] text-[38px] md:text-[48px] lg:text-[60px] font-medium leading-12 md:leading-14 lg:leading-16.5"
+              >
+                Services We Provide
+              </h2>
+            </div>
+          </div>
+
+          <!-- Cards track (starts at the container edge, bleeds off to the right) -->
+          <div class="service-collaction-wrap relative flex gap-4 touch-pan-y">
+            <!-- Card 1 -->
+            <div
+              class="service-collaction w-[85vw] shrink-0 sm:w-105 md:w-131.25"
+            >
+              <div
+                class="service-single-card home flex h-full flex-col rounded-[20px] border border-[#d0d8e4] bg-white p-5 md:p-6 lg:p-8 hover:shadow-[0_4px_20px_rgba(0,0,0,0.15)] transition-shadow duration-300 ease-out"
+              >
+                <div class="service-single-left-box">
+                  <div class="service-left-top-box _01">
+                    <div
+                      class="service-card-inner flex items-start justify-between gap-4"
+                    >
+                      <a href="#" class="heading-style-h5">
+                        <h3
+                          class="font-inter text-[#1E1E1E] text-lg md:text-2xl font-medium leading-5 md:leading-6.5"
+                        >
+                          Business Strategy
+                        </h3>
+                      </a>
+
+                      <a
+                        href="#"
+                        aria-label="View Business Strategy"
+                        class="link-btn _02 mt-1 block group/arrow"
+                      >
+                        <div
+                          class="link-btn-icon-box service relative size-4 overflow-hidden"
+                        >
+                          <!-- First arrow: moves out toward top-right -->
+                          <img
+                            src="assets/images/arrow-top.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="link-btn-icon absolute inset-0 size-4 object-contain transition-transform duration-500 ease-out group-hover/arrow:-translate-y-[130%] group-hover/arrow:translate-x-[130%]"
+                          />
+
+                          <!-- Second arrow: enters from bottom-left -->
+                          <img
+                            src="assets/images/arrow-top.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="link-btn-icon hover absolute inset-0 size-4 translate-x-[-130%] translate-y-[130%] object-contain transition-transform duration-500 ease-out group-hover/arrow:translate-x-0 group-hover/arrow:translate-y-0"
+                          />
+                        </div>
+                      </a>
+                    </div>
+
+                    <div
+                      class="service-card-description font-inter text-[#5A6271] text-base md:text-lg font-normal leading-6 md:leading-6.75 mt-5 max-w-[90%]"
+                    >
+                      <div class="paragraph-medium paragraph">
+                        From strategy and branding to product development and
+                        business growth, we deliver tailored solutions that help
+                        startups launch, scale, and succeed in competitive
+                        markets.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <a
+                  href="#"
+                  class="service-single-right-box mt-8 block aspect-367/201 w-full overflow-hidden rounded-[10px] bg-[#EEF0F6]"
+                >
+                  <img
+                    src="assets/images/service-thumbnail-1.webp"
+                    alt="Business Strategy"
+                    class="service-card-image h-full w-full object-cover"
+                  />
+                </a>
+
+                <div
+                  class="service-category-box-wrap mt-4 flex flex-wrap gap-2 font-inter text-sm font-normal leading-5.25 text-[#1E1E1E]"
+                >
+                  <div
+                    class="service-category rounded-full border border-[#d0d8e4] px-4 py-2.5 max-sm:px-3 max-sm:py-2 max-sm:text-xs"
+                  >
+                    strategy
+                  </div>
+                  <div
+                    class="service-category rounded-full border border-[#d0d8e4] px-4 py-2.5 max-sm:px-3 max-sm:py-2 max-sm:text-xs"
+                  >
+                    marketing
+                  </div>
+                  <div
+                    class="service-category rounded-full border border-[#d0d8e4] px-4 py-2.5 max-sm:px-3 max-sm:py-2 max-sm:text-xs"
+                  >
+                    consulting
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div
+              class="service-collaction w-[85vw] shrink-0 sm:w-105 md:w-131.25"
+            >
+              <div
+                class="service-single-card home flex h-full flex-col rounded-[20px] border border-[#d0d8e4] bg-white p-5 md:p-6 lg:p-8 hover:shadow-[0_4px_20px_rgba(0,0,0,0.15)] transition-shadow duration-300 ease-out"
+              >
+                <div class="service-single-left-box">
+                  <div class="service-left-top-box _01">
+                    <div
+                      class="service-card-inner flex items-start justify-between gap-4"
+                    >
+                      <a href="#" class="heading-style-h5">
+                        <h3
+                          class="font-inter text-[#1E1E1E] text-lg md:text-2xl font-medium leading-5 md:leading-6.5"
+                        >
+                          Brand Identity
+                        </h3>
+                      </a>
+
+                      <a
+                        href="#"
+                        aria-label="View Brand Identity "
+                        class="link-btn _02 mt-1 block group/arrow"
+                      >
+                        <div
+                          class="link-btn-icon-box service relative size-4 overflow-hidden"
+                        >
+                          <!-- First arrow: moves out toward top-right -->
+                          <img
+                            src="assets/images/arrow-top.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="link-btn-icon absolute inset-0 size-4 object-contain transition-transform duration-500 ease-out group-hover/arrow:-translate-y-[130%] group-hover/arrow:translate-x-[130%]"
+                          />
+
+                          <!-- Second arrow: enters from bottom-left -->
+                          <img
+                            src="assets/images/arrow-top.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="link-btn-icon hover absolute inset-0 size-4 translate-x-[-130%] translate-y-[130%] object-contain transition-transform duration-500 ease-out group-hover/arrow:translate-x-0 group-hover/arrow:translate-y-0"
+                          />
+                        </div>
+                      </a>
+                    </div>
+
+                    <div
+                      class="service-card-description font-inter text-[#5A6271] text-base md:text-lg font-normal leading-6 md:leading-6.75 mt-5 max-w-[90%]"
+                    >
+                      <div class="paragraph-medium paragraph">
+                        Our end-to-end business services empower startups with
+                        the expertise, technology, and strategic guidance needed
+                        to accelerate growth and achieve long-term success.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <a
+                  href="#"
+                  class="service-single-right-box mt-8 block aspect-367/201 w-full overflow-hidden rounded-[10px] bg-[#EEF0F6]"
+                >
+                  <img
+                    src="assets/images/service-thumbnail-2.webp"
+                    alt="Brand Identity"
+                    class="service-card-image h-full w-full object-cover"
+                  />
+                </a>
+
+                <div
+                  class="service-category-box-wrap mt-4 flex flex-wrap gap-2 font-inter text-sm font-normal leading-5.25 text-[#1E1E1E]"
+                >
+                  <div
+                    class="service-category rounded-full border border-[#d0d8e4] px-4 py-2.5 max-sm:px-3 max-sm:py-2 max-sm:text-xs"
+                  >
+                    strategy
+                  </div>
+                  <div
+                    class="service-category rounded-full border border-[#d0d8e4] px-4 py-2.5 max-sm:px-3 max-sm:py-2 max-sm:text-xs"
+                  >
+                    marketing
+                  </div>
+                  <div
+                    class="service-category rounded-full border border-[#d0d8e4] px-4 py-2.5 max-sm:px-3 max-sm:py-2 max-sm:text-xs"
+                  >
+                    consulting
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div
+              class="service-collaction w-[85vw] shrink-0 sm:w-105 md:w-131.25"
+            >
+              <div
+                class="service-single-card home flex h-full flex-col rounded-[20px] border border-[#d0d8e4] bg-white p-5 md:p-6 lg:p-8 hover:shadow-[0_4px_20px_rgba(0,0,0,0.15)] transition-shadow duration-300 ease-out"
+              >
+                <div class="service-single-left-box">
+                  <div class="service-left-top-box _01">
+                    <div
+                      class="service-card-inner flex items-start justify-between gap-4"
+                    >
+                      <a href="#" class="heading-style-h5">
+                        <h3
+                          class="font-inter text-[#1E1E1E] text-lg md:text-2xl font-medium leading-5 md:leading-6.5"
+                        >
+                          Growth Consulting
+                        </h3>
+                      </a>
+
+                      <a
+                        href="#"
+                        aria-label="View Growth Consulting "
+                        class="link-btn _02 mt-1 block group/arrow"
+                      >
+                        <div
+                          class="link-btn-icon-box service relative size-4 overflow-hidden"
+                        >
+                          <!-- First arrow: moves out toward top-right -->
+                          <img
+                            src="assets/images/arrow-top.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="link-btn-icon absolute inset-0 size-4 object-contain transition-transform duration-500 ease-out group-hover/arrow:-translate-y-[130%] group-hover/arrow:translate-x-[130%]"
+                          />
+
+                          <!-- Second arrow: enters from bottom-left -->
+                          <img
+                            src="assets/images/arrow-top.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="link-btn-icon hover absolute inset-0 size-4 translate-x-[-130%] translate-y-[130%] object-contain transition-transform duration-500 ease-out group-hover/arrow:translate-x-0 group-hover/arrow:translate-y-0"
+                          />
+                        </div>
+                      </a>
+                    </div>
+
+                    <div
+                      class="service-card-description font-inter text-[#5A6271] text-base md:text-lg font-normal leading-6 md:leading-6.75 mt-5 max-w-[90%]"
+                    >
+                      <div class="paragraph-medium paragraph">
+                        We partner with ambitious founders to create innovative
+                        strategies, scalable products, and sustainable growth
+                        solutions that drive measurable business success.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <a
+                  href="#"
+                  class="service-single-right-box mt-8 block aspect-367/201 w-full overflow-hidden rounded-[10px] bg-[#EEF0F6]"
+                >
+                  <img
+                    src="assets/images/service-thumbnail-3.webp"
+                    alt="Growth Consulting"
+                    class="service-card-image h-full w-full object-cover"
+                  />
+                </a>
+
+                <div
+                  class="service-category-box-wrap mt-4 flex flex-wrap gap-2 font-inter text-sm font-normal leading-5.25 text-[#1E1E1E]"
+                >
+                  <div
+                    class="service-category rounded-full border border-[#d0d8e4] px-4 py-2.5 max-sm:px-3 max-sm:py-2 max-sm:text-xs"
+                  >
+                    strategy
+                  </div>
+                  <div
+                    class="service-category rounded-full border border-[#d0d8e4] px-4 py-2.5 max-sm:px-3 max-sm:py-2 max-sm:text-xs"
+                  >
+                    marketing
+                  </div>
+                  <div
+                    class="service-category rounded-full border border-[#d0d8e4] px-4 py-2.5 max-sm:px-3 max-sm:py-2 max-sm:text-xs"
+                  >
+                    consulting
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Card 4 -->
+            <div
+              class="service-collaction w-[85vw] shrink-0 sm:w-105 md:w-131.25"
+            >
+              <div
+                class="service-single-card home flex h-full flex-col rounded-[20px] border border-[#d0d8e4] bg-white p-5 md:p-6 lg:p-8 hover:shadow-[0_4px_20px_rgba(0,0,0,0.15)] transition-shadow duration-300 ease-out"
+              >
+                <div class="service-single-left-box">
+                  <div class="service-left-top-box _01">
+                    <div
+                      class="service-card-inner flex items-start justify-between gap-4"
+                    >
+                      <a href="#" class="heading-style-h5">
+                        <h3
+                          class="font-inter text-[#1E1E1E] text-lg md:text-2xl font-medium leading-5 md:leading-6.5"
+                        >
+                          Digital Marketing
+                        </h3>
+                      </a>
+
+                      <a
+                        href="#"
+                        aria-label="View Digital Marketing "
+                        class="link-btn _02 mt-1 block group/arrow"
+                      >
+                        <div
+                          class="link-btn-icon-box service relative size-4 overflow-hidden"
+                        >
+                          <!-- First arrow: moves out toward top-right -->
+                          <img
+                            src="assets/images/arrow-top.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="link-btn-icon absolute inset-0 size-4 object-contain transition-transform duration-500 ease-out group-hover/arrow:-translate-y-[130%] group-hover/arrow:translate-x-[130%]"
+                          />
+
+                          <!-- Second arrow: enters from bottom-left -->
+                          <img
+                            src="assets/images/arrow-top.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="link-btn-icon hover absolute inset-0 size-4 translate-x-[-130%] translate-y-[130%] object-contain transition-transform duration-500 ease-out group-hover/arrow:translate-x-0 group-hover/arrow:translate-y-0"
+                          />
+                        </div>
+                      </a>
+                    </div>
+
+                    <div
+                      class="service-card-description font-inter text-[#5A6271] text-base md:text-lg font-normal leading-6 md:leading-6.75 mt-5 max-w-[90%]"
+                    >
+                      <div class="paragraph-medium paragraph">
+                        We combine innovation, strategic thinking, and modern
+                        technology to help businesses overcome challenges,
+                        unlock opportunities, and build a foundation for lasting
+                        growth.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <a
+                  href="#"
+                  class="service-single-right-box mt-8 block aspect-367/201 w-full overflow-hidden rounded-[10px] bg-[#EEF0F6]"
+                >
+                  <img
+                    src="assets/images/service-thumbnail-4.webp"
+                    alt="Digital Marketing"
+                    class="service-card-image h-full w-full object-cover"
+                  />
+                </a>
+
+                <div
+                  class="service-category-box-wrap mt-4 flex flex-wrap gap-2 font-inter text-sm font-normal leading-5.25 text-[#1E1E1E]"
+                >
+                  <div
+                    class="service-category rounded-full border border-[#d0d8e4] px-4 py-2.5 max-sm:px-3 max-sm:py-2 max-sm:text-xs"
+                  >
+                    strategy
+                  </div>
+                  <div
+                    class="service-category rounded-full border border-[#d0d8e4] px-4 py-2.5 max-sm:px-3 max-sm:py-2 max-sm:text-xs"
+                  >
+                    marketing
+                  </div>
+                  <div
+                    class="service-category rounded-full border border-[#d0d8e4] px-4 py-2.5 max-sm:px-3 max-sm:py-2 max-sm:text-xs"
+                  >
+                    consulting
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slider arrows (mobile only) -->
+          <div
+            class="service-slider-nav mt-6 flex justify-center gap-2 md:hidden"
+          >
+            <button
+              type="button"
+              data-slider="prev"
+              aria-label="Previous service"
+              class="grid size-11 place-items-center rounded-full border border-[#D7DCE8] bg-[#000000] text-[#1E1E1E] transition-opacity disabled:pointer-events-none disabled:opacity-40"
+            >
+              <img src="assets/images/arrow-prev.svg" />
+            </button>
+            <button
+              type="button"
+              data-slider="next"
+              aria-label="Next service"
+              class="grid size-11 place-items-center rounded-full border border-[#D7DCE8] bg-[#000000] text-[#1E1E1E] transition-opacity disabled:pointer-events-none disabled:opacity-40"
+            >
+              <img src="assets/images/arrow-next.svg" />
+            </button>
+          </div>
+
+          <!-- Progress line: fills from the center outward -->
+          <div
+            class="service-liner-wrap relative mt-8 h-px w-full bg-[#d0d8e4] md:mt-10"
+          >
+            <div
+              class="service-liner absolute inset-0 origin-center bg-[#1E1E1E] transform-[scaleX(0)]"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--  Our impact on brands -->
+    <section id="impact" class="section home-impact bg-white py-6 md:py-16">
+      <div class="container mx-auto px-4">
+        <!-- Main grid: 12-col equal split on md, switches back to custom minmax columns on lg -->
+        <div
+          class="impact-grid grid grid-cols-12 gap-6 md:items-stretch md:gap-8 lg:grid-cols-[minmax(0,1.634fr)_minmax(0,1fr)] lg:gap-10.5"
+        >
+          <!-- Left column: spans 12 on mobile, 6 on md, resets to auto on lg -->
+          <div
+            class="impact-left col-span-12 md:col-span-6 lg:col-auto flex flex-col justify-between gap-8 md:gap-50 lg:gap-62.5"
+          >
+            <!-- Head: label + heading -->
+            <div
+              class="impact-head grid gap-4 lg:grid-cols-[3fr_5fr] md:gap-4 lg:gap-0"
+            >
+              <p
+                class="font-chivo text-sm font-normal uppercase leading-5 text-[#5A6271]"
+              >
+                Our impact on brands
+              </p>
+              <h2
+                class="heading-blur-reveal font-inter text-2xl md:text-[28px] font-medium text-[#1E1E1E] lg:text-[32px] leading-6.5 md:leading-8.75"
+              >
+                Tormuz™ is a startup partner empowering ambitious businesses and
+                bold ideas.
+              </h2>
+            </div>
+
+            <!-- Stats: 2-column grid -->
+            <div class="impact-stats grid gap-4 md:grid-cols-2 md:gap-5">
+              <!-- Stat 1 -->
+              <div
+                class="impact-card flex min-h-37.5 md:min-h-60 flex-col justify-between rounded-3xl bg-[#EEF0F6] p-2.5"
+              >
+                <div
+                  class="rounded-xl bg-white px-7 py-4 font-inter text-[#1E1E1E] text-xl font-medium leading-6"
+                >
+                  Globally trusted partners
+                </div>
+                <div class="px-5 pb-3 pt-10">
+                  <div
+                    class="counter-item font-inter text-[#1E1E1E] text-[36px] md:text-[48px] font-medium leading-9 md:leading-12"
+                    data-value="3"
+                    data-suffix="m+"
+                  >
+                    3m+
+                  </div>
+                  <p
+                    class="mt-2 font-inter text-[#5A6271] text-sm font-normal leading-5.25 max-w-64.25"
+                  >
+                    Supporting companies with measurable business expansion.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Stat 2 -->
+              <div
+                class="impact-card flex min-h-37.5 md:min-h-60 flex-col justify-between rounded-3xl bg-[#EEF0F6] p-2.5"
+              >
+                <div
+                  class="rounded-xl bg-white px-7 py-4 font-inter text-[#1E1E1E] text-xl font-medium leading-6"
+                >
+                  Average client growth
+                </div>
+                <div class="px-5 pb-3 pt-10">
+                  <div
+                    class="counter-item font-inter text-[#1E1E1E] text-[36px] md:text-[48px] font-medium leading-9 md:leading-12"
+                    data-value="200"
+                    data-suffix="%"
+                  >
+                    200%
+                  </div>
+                  <p
+                    class="mt-2 font-inter text-[#5A6271] text-sm font-normal leading-5.25 max-w-64.25"
+                  >
+                    Average business growth achieved within the first year
+                    successfully.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right column: spans 12 on mobile, 6 on md, resets to auto on lg -->
+          <div
+            class="impact-video col-span-12 md:col-span-6 lg:col-auto relative aspect-[16/10] w-full overflow-hidden rounded-3xl bg-[#34478A] md:aspect-auto md:h-full md:min-h-0"
+          >
+            <video
+              class="absolute inset-0 h-full w-full object-cover"
+              src="assets/videos/counter-bg-video.mp4"
+              poster="assets/images/impact-poster.jpg"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+
+            <!-- Toggle Button -->
+            <button
+              type="button"
+              data-video-toggle
+              aria-label="Pause video"
+              class="absolute bottom-4 right-4 z-10 grid h-7 w-9 place-items-center rounded-md bg-white/20 text-white backdrop-blur-md transition-colors duration-300 hover:bg-white/35 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            >
+              <!-- play icon -->
+              <svg
+                data-icon="play"
+                class="hidden size-3.5"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M4.5 2.8v10.4a.6.6 0 0 0 .92.5l8.1-5.2a.6.6 0 0 0 0-1L5.42 2.3a.6.6 0 0 0-.92.5Z"
+                />
+              </svg>
+              <!-- pause icon -->
+              <svg
+                data-icon="pause"
+                class="size-3.5"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <rect x="3.5" y="2.5" width="3.2" height="11" rx="0.8" />
+                <rect x="9.3" y="2.5" width="3.2" height="11" rx="0.8" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial section -->
+    <section
+      id="testimonials"
+      class="section home-testimonials bg-white py-12 md:py-16"
+    >
+      <div class="container">
+        <div
+          class="testimonial-grid grid min-w-0 gap-10 lg:grid-cols-[7fr_10fr] lg:gap-0"
+        >
+          <!-- Left: sticky title -->
+          <div
+            class="testimonial-title self-start text-center lg:sticky lg:top-24 lg:text-left"
+          >
+            <p
+              class="font-chivo text-sm font-normal uppercase leading-5 text-[#5A6271]"
+            >
+              Testimonials
+            </p>
+            <h2
+              class="heading-reveal font-inter text-[#1E1E1E] text-[38px] md:text-[48px] lg:text-[60px] font-medium leading-12 md:leading-14 lg:leading-16.5 mt-2"
+            >
+              Real Stories From Successful Startup Leaders.
+            </h2>
+          </div>
+
+          <!-- Right: stacking cards (desktop) / slider (mobile) -->
+          <div class="testimonial-slider min-w-0 w-full">
+            <!-- clips the track on mobile only -->
+            <div class="testimonial-viewport">
+              <div class="testimonial-stack relative">
+                <!-- Card 1 -->
+                <article class="testimonial-card group relative z-10">
+                  <div
+                    class="testimonial-inner grid border-x border-t border-[#D7DCE8] bg-[#EEF0F6] max-lg:border-b lg:grid-cols-[minmax(0,1fr)_320px]"
+                  >
+                    <!-- Content column (second on mobile) -->
+                    <div
+                      class="order-2 lg:order-0 flex min-h-99.5 flex-col justify-between gap-10 px-6 py-10 md:px-12.5 md:py-13"
+                    >
+                      <div>
+                        <img
+                          src="assets/images/testimonial-relax.svg"
+                          alt="relax"
+                          class="h-7 w-auto"
+                        />
+
+                        <div
+                          class="mt-9 flex gap-1 text-[#FF9A0A]"
+                          role="img"
+                          aria-label="5 out of 5 stars"
+                        >
+                          <img
+                            src="assets/images/star.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="h-4 w-auto"
+                          />
+                          <img
+                            src="assets/images/star.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="h-4 w-auto"
+                          />
+                          <img
+                            src="assets/images/star.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="h-4 w-auto"
+                          />
+                          <img
+                            src="assets/images/star.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="h-4 w-auto"
+                          />
+                          <img
+                            src="assets/images/star.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="h-4 w-auto"
+                          />
+                        </div>
+
+                        <blockquote
+                          class="mt-6 font-inter text-xl font-medium leading-6 italic text-[#1E1E1E]"
+                        >
+                          “Working with Tormuz transformed the way we approach
+                          growth. From strategic planning to execution, every
+                          solution was practically solved.”
+                        </blockquote>
+                      </div>
+
+                      <div>
+                        <p
+                          class="font-inter text-sm font-normal leading-5.25 text-[#5A6271]"
+                        >
+                          Founder, NovaCore
+                        </p>
+                        <p
+                          class="mt-2 font-inter text-base font-medium leading-6 text-[#1E1E1E]"
+                        >
+                          Ethan Brooks
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Image column (first on mobile) -->
+                    <div class="order-1 lg:order-0 p-2.5">
+                      <div class="h-full w-full overflow-hidden rounded-xl">
+                        <img
+                          src="assets/images/client-1.webp"
+                          alt="Ethan Brooks"
+                          class="h-auto w-full lg:h-full lg:w-full lg:object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="testimonial-card group relative z-10">
+                  <div
+                    class="testimonial-inner grid border-x border-t border-b border-[#D7DCE8] bg-[#EEF0F6] lg:grid-cols-[minmax(0,1fr)_320px]"
+                  >
+                    <!-- Content column (second on mobile) -->
+                    <div
+                      class="order-2 lg:order-0 flex min-h-99.5 flex-col justify-between gap-10 px-6 py-10 md:px-12.5 md:py-13"
+                    >
+                      <div>
+                        <img
+                          src="assets/images/testimonial-verse.svg"
+                          alt="relax"
+                          class="h-7 w-auto"
+                        />
+
+                        <div
+                          class="mt-9 flex gap-1 text-[#FF9A0A]"
+                          role="img"
+                          aria-label="5 out of 5 stars"
+                        >
+                          <img
+                            src="assets/images/star.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="h-4 w-auto"
+                          />
+                          <img
+                            src="assets/images/star.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="h-4 w-auto"
+                          />
+                          <img
+                            src="assets/images/star.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="h-4 w-auto"
+                          />
+                          <img
+                            src="assets/images/star.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="h-4 w-auto"
+                          />
+                          <img
+                            src="assets/images/star.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="h-4 w-auto"
+                          />
+                        </div>
+
+                        <blockquote
+                          class="mt-6 font-inter text-xl font-medium leading-6 italic text-[#1E1E1E]"
+                        >
+                          “Tormuz gave us the clarity & strategy we needed to
+                          scale with confidence. Their innovative approach,
+                          business expertise and impact on our growth.”
+                        </blockquote>
+                      </div>
+
+                      <div>
+                        <p
+                          class="font-inter text-sm font-normal leading-5.25 text-[#5A6271]"
+                        >
+                          Founder, VentureX
+                        </p>
+                        <p
+                          class="mt-2 font-inter text-base font-medium leading-6 text-[#1E1E1E]"
+                        >
+                          Sophia Bennet
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Image column (first on mobile) -->
+                    <div class="order-1 lg:order-0 p-2.5">
+                      <div class="h-full w-full overflow-hidden rounded-xl">
+                        <img
+                          src="assets/images/client-2.webp"
+                          alt="Ethan Brooks"
+                          class="h-auto w-full lg:h-full lg:w-full lg:object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="testimonial-card group relative z-10">
+                  <div
+                    class="testimonial-inner grid border-x border-t border-b border-[#D7DCE8] bg-[#EEF0F6] lg:grid-cols-[minmax(0,1fr)_320px]"
+                  >
+                    <!-- Content column (second on mobile) -->
+                    <div
+                      class="order-2 lg:order-0 flex min-h-99.5 flex-col justify-between gap-10 px-6 py-10 md:px-12.5 md:py-13"
+                    >
+                      <div>
+                        <img
+                          src="assets/images/testimonial-zeer.svg"
+                          alt="relax"
+                          class="h-7 w-auto"
+                        />
+
+                        <div
+                          class="mt-9 flex gap-1 text-[#FF9A0A]"
+                          role="img"
+                          aria-label="5 out of 5 stars"
+                        >
+                          <img
+                            src="assets/images/star.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="h-4 w-auto"
+                          />
+                          <img
+                            src="assets/images/star.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="h-4 w-auto"
+                          />
+                          <img
+                            src="assets/images/star.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="h-4 w-auto"
+                          />
+                          <img
+                            src="assets/images/star.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="h-4 w-auto"
+                          />
+                          <img
+                            src="assets/images/star.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="h-4 w-auto"
+                          />
+                        </div>
+
+                        <blockquote
+                          class="mt-6 font-inter text-xl font-medium leading-6 italic text-[#1E1E1E]"
+                        >
+                          “The team at Tormuz delivered clear strategies,
+                          valuable insights, and scalable solutions that helped
+                          us accelerate growth.”
+                        </blockquote>
+                      </div>
+
+                      <div>
+                        <p
+                          class="font-inter text-sm font-normal leading-5.25 text-[#5A6271]"
+                        >
+                          Co-Founder, ScaleFlow
+                        </p>
+                        <p
+                          class="mt-2 font-inter text-base font-medium leading-6 text-[#1E1E1E]"
+                        >
+                          Daniel Morgan
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Image column (first on mobile) -->
+                    <div class="order-1 lg:order-0 p-2.5">
+                      <div class="h-full w-full overflow-hidden rounded-xl">
+                        <img
+                          src="assets/images/client-3.webp"
+                          alt="Ethan Brooks"
+                          class="h-auto w-full lg:h-full lg:w-full lg:object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="testimonial-card group relative z-10">
+                  <div
+                    class="testimonial-inner grid border-x border-t border-b border-[#D7DCE8] bg-[#EEF0F6] lg:grid-cols-[minmax(0,1fr)_320px]"
+                  >
+                    <!-- Content column (second on mobile) -->
+                    <div
+                      class="order-2 lg:order-0 flex min-h-99.5 flex-col justify-between gap-10 px-6 py-10 md:px-12.5 md:py-13"
+                    >
+                      <div>
+                        <img
+                          src="assets/images/testimonial-verse.svg"
+                          alt="relax"
+                          class="h-7 w-auto"
+                        />
+
+                        <div
+                          class="mt-9 flex gap-1 text-[#FF9A0A]"
+                          role="img"
+                          aria-label="5 out of 5 stars"
+                        >
+                          <img
+                            src="assets/images/star.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="h-4 w-auto"
+                          />
+                          <img
+                            src="assets/images/star.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="h-4 w-auto"
+                          />
+                          <img
+                            src="assets/images/star.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="h-4 w-auto"
+                          />
+                          <img
+                            src="assets/images/star.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="h-4 w-auto"
+                          />
+                          <img
+                            src="assets/images/star.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="h-4 w-auto"
+                          />
+                        </div>
+
+                        <blockquote
+                          class="mt-6 font-inter text-xl font-medium leading-6 italic text-[#1E1E1E]"
+                        >
+                          “From market research to execution, Tormuz provided
+                          the guidance and expertise we needed to grow faster.
+                          Their strategic approach helped us improve our
+                          performance.”
+                        </blockquote>
+                      </div>
+
+                      <div>
+                        <p
+                          class="font-inter text-sm font-normal leading-5.25 text-[#5A6271]"
+                        >
+                          Co-Founder, BrightPath
+                        </p>
+                        <p
+                          class="mt-2 font-inter text-base font-medium leading-6 text-[#1E1E1E]"
+                        >
+                          Sarah Mkhitar
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Image column (first on mobile) -->
+                    <div class="order-1 lg:order-0 p-2.5">
+                      <div class="h-full w-full overflow-hidden rounded-xl">
+                        <img
+                          src="assets/images/client-4.webp"
+                          alt="Ethan Brooks"
+                          class="h-auto w-full lg:h-full lg:w-full lg:object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <!-- Slider arrows (bottom, centered, mobile + tablet only) -->
+            <div
+              class="testimonial-slider-nav mt-6 flex justify-center gap-2 lg:hidden"
+            >
+              <button
+                type="button"
+                data-slider="prev"
+                aria-label="Previous testimonial"
+                class="grid size-11 place-items-center rounded-full border border-[#D7DCE8] bg-[#000000] text-[#1E1E1E] transition-opacity disabled:pointer-events-none disabled:opacity-40"
+              >
+                <img src="assets/images/arrow-prev.svg" alt="" />
+              </button>
+              <button
+                type="button"
+                data-slider="next"
+                aria-label="Next testimonial"
+                class="grid size-11 place-items-center rounded-full border border-[#D7DCE8] bg-[#000000] text-[#1E1E1E] transition-opacity disabled:pointer-events-none disabled:opacity-40"
+              >
+                <img src="assets/images/arrow-next.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="h-screen"></div>
+
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/SplitText.min.js"></script>
+    <script src="assets/js/splide.min.js"></script>
+    <script src="assets/js/splide-extension-auto-scroll.min.js"></script>
+    <script src="assets/js/lenis.min.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
