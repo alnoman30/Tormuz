@@ -1,20 +1,19 @@
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
-
 // ──======================================= Smooth scroll (Lenis)======================================== ──
-if (typeof Lenis !== 'undefined') {
+if (typeof Lenis !== "undefined") {
   const lenis = new Lenis({
     duration: 1.4,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    direction: 'vertical',
-    gestureDirection: 'vertical',
+    direction: "vertical",
+    gestureDirection: "vertical",
     smoothWheel: true,
     wheelMultiplier: 1.3,
     infinite: false,
   });
 
-  if (typeof ScrollTrigger !== 'undefined') {
-    lenis.on('scroll', ScrollTrigger.update);
+  if (typeof ScrollTrigger !== "undefined") {
+    lenis.on("scroll", ScrollTrigger.update);
   }
 
   gsap.ticker.add((time) => {
@@ -26,10 +25,10 @@ if (typeof Lenis !== 'undefined') {
 
 // Navbar
 document.addEventListener("DOMContentLoaded", () => {
-  const navbar   = document.querySelector(".navbar");
-  const toggle   = document.querySelector(".menu-toggle");
-  const line2    = document.querySelector(".line-2");
-  const menu     = document.querySelector(".navbar__menu");
+  const navbar = document.querySelector(".navbar");
+  const toggle = document.querySelector(".menu-toggle");
+  const line2 = document.querySelector(".line-2");
+  const menu = document.querySelector(".navbar__menu");
   const backdrop = document.querySelector(".navbar-backdrop");
 
   const CLOSED_WIDTH = 700;
@@ -50,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
       width: "100%",
       duration: 0.35,
       ease: "power2.out",
-      overwrite: "auto"
+      overwrite: "auto",
     });
   });
 
@@ -61,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
       width: "70%",
       duration: 0.35,
       ease: "power2.out",
-      overwrite: "auto"
+      overwrite: "auto",
     });
   });
 
@@ -84,41 +83,57 @@ document.addEventListener("DOMContentLoaded", () => {
       defaults: { ease: "power2.inOut" },
       onReverseComplete: () => {
         menu.setAttribute("aria-hidden", "true");
-      }
+      },
     });
 
     menuTimeline
-      .to(navbar, {
-        width: openWidth,
-        duration: 0.6
-      }, 0)
-
-      .fromTo(menu,
-        { height: 0 },
-        { height: menuHeight, duration: 0.6 },
-        0.6
+      .to(
+        navbar,
+        {
+          width: openWidth,
+          duration: 0.6,
+        },
+        0,
       )
 
-      .to(backdrop, {
-        opacity: 1,
-        duration: 0.5
-      }, 0)
+      .fromTo(menu, { height: 0 }, { height: menuHeight, duration: 0.6 }, 0.6)
 
-      .to(line2, {
-        width: "100%",
-        y: -LINE_GAP,
-        duration: 0.4
-      }, 0)
+      .to(
+        backdrop,
+        {
+          opacity: 1,
+          duration: 0.5,
+        },
+        0,
+      )
 
-      .to(line2, {
-        autoAlpha: 0,
-        duration: 0.1
-      }, 0.35)
+      .to(
+        line2,
+        {
+          width: "100%",
+          y: -LINE_GAP,
+          duration: 0.4,
+        },
+        0,
+      )
 
-      .to(toggle, {
-        backgroundColor: "#ffffff",
-        duration: 0.3
-      }, 0);
+      .to(
+        line2,
+        {
+          autoAlpha: 0,
+          duration: 0.1,
+        },
+        0.35,
+      )
+
+      .to(
+        toggle,
+        {
+          backgroundColor: "#ffffff",
+          duration: 0.3,
+        },
+        0,
+      );
   };
 
   buildTimeline();
@@ -168,13 +183,12 @@ document.addEventListener("DOMContentLoaded", () => {
       menuTimeline.progress(1);
     }
   });
-
 });
 
 // Hero marque slider
 document.addEventListener("DOMContentLoaded", () => {
   const reduceMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
+    "(prefers-reduced-motion: reduce)",
   ).matches;
 
   const heroSlider = new Splide(".hero-slider", {
@@ -194,8 +208,8 @@ document.addEventListener("DOMContentLoaded", () => {
       : {
           speed: 0.6,
           pauseOnHover: false,
-          pauseOnFocus: false
-        }
+          pauseOnFocus: false,
+        },
   });
 
   /* ---------- Video play / pause (synced across Splide clones) ---------- */
@@ -203,33 +217,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const pausedVideos = new Set();
 
   const syncVideos = () => {
-    heroSlider.root
-      .querySelectorAll("video[data-video]")
-      .forEach((video) => {
-        video.muted = true;
+    heroSlider.root.querySelectorAll("video[data-video]").forEach((video) => {
+      video.muted = true;
 
-        if (
-          pausedVideos.has(video.dataset.video) ||
-          reduceMotion
-        ) {
-          video.pause();
-        } else {
-          video.play().catch(() => {});
-        }
-      });
+      if (pausedVideos.has(video.dataset.video) || reduceMotion) {
+        video.pause();
+      } else {
+        video.play().catch(() => {});
+      }
+    });
 
     heroSlider.root
       .querySelectorAll("[data-video-toggle]")
       .forEach((button) => {
         const isPaused =
-          pausedVideos.has(button.dataset.videoToggle) ||
-          reduceMotion;
+          pausedVideos.has(button.dataset.videoToggle) || reduceMotion;
 
         button.classList.toggle("is-paused", isPaused);
 
         button.setAttribute(
           "aria-label",
-          isPaused ? "Play video" : "Pause video"
+          isPaused ? "Play video" : "Pause video",
         );
       });
   };
@@ -237,11 +245,9 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ---------- Reduced motion ---------- */
 
   if (reduceMotion) {
-    heroSlider.root
-      .querySelectorAll("video[data-video]")
-      .forEach((video) => {
-        pausedVideos.add(video.dataset.video);
-      });
+    heroSlider.root.querySelectorAll("video[data-video]").forEach((video) => {
+      pausedVideos.add(video.dataset.video);
+    });
   }
 
   /* ---------- Video toggle (works with cloned slides) ---------- */
@@ -275,9 +281,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Hero intro animation
 document.addEventListener("DOMContentLoaded", () => {
-  const logo    = document.querySelector(".hero__logo img");
+  const logo = document.querySelector(".hero__logo img");
   const tagline = document.querySelector(".hero__tagline");
-  const slider  = document.querySelector(".hero-slider");
+  const slider = document.querySelector(".hero-slider");
 
   if (!logo || !tagline || !slider) return;
 
@@ -289,9 +295,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  const fontsReady = document.fonts
-    ? document.fonts.ready
-    : Promise.resolve();
+  const fontsReady = document.fonts ? document.fonts.ready : Promise.resolve();
 
   // Wait for logo and first slides to load
   const loaded = (img) =>
@@ -303,17 +307,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
   const imagesReady = Promise.all(
-    [logo, ...[...slider.querySelectorAll("img")].slice(0, 8)].map(loaded)
+    [logo, ...[...slider.querySelectorAll("img")].slice(0, 8)].map(loaded),
   );
 
   // Never block forever
   const timeout = new Promise((res) => setTimeout(res, 2500));
 
-  Promise.race([
-    Promise.all([fontsReady, imagesReady]),
-    timeout
-  ]).then(() => {
-
+  Promise.race([Promise.all([fontsReady, imagesReady]), timeout]).then(() => {
     // Split tagline into characters
     let chars = [tagline];
 
@@ -321,86 +321,100 @@ document.addEventListener("DOMContentLoaded", () => {
       gsap.registerPlugin(SplitText);
 
       chars = SplitText.create(tagline, {
-        type: "words,chars"
+        type: "words,chars",
       }).chars;
     }
 
     // Initial states
     gsap.set(logo, {
       yPercent: 30,
-      force3D: true
+      force3D: true,
     });
 
     gsap.set(chars, {
       opacity: 0,
-      filter: "blur(10px)"
+      filter: "blur(10px)",
     });
 
     gsap.set(slider, {
       y: 60,
       opacity: 0,
-      force3D: true
+      force3D: true,
     });
 
     show();
 
     // Animation timeline
-    gsap.timeline({
-      onComplete: () => {
-        gsap.set(chars, { clearProps: "filter" });
-      }
-    })
+    gsap
+      .timeline({
+        onComplete: () => {
+          gsap.set(chars, { clearProps: "filter" });
+        },
+      })
 
-    .to(logo, {
-      yPercent: 0,
-      duration: 1.2,
-      ease: "power4.out",
-      force3D: true
-    }, 0)
+      .to(
+        logo,
+        {
+          yPercent: 0,
+          duration: 1.2,
+          ease: "power4.out",
+          force3D: true,
+        },
+        0,
+      )
 
-    .to(chars, {
-      opacity: 1,
-      filter: "blur(0px)",
-      duration: 0.8,
-      stagger: 0.03,
-      ease: "power2.out"
-    }, 0.4)
+      .to(
+        chars,
+        {
+          opacity: 1,
+          filter: "blur(0px)",
+          duration: 0.8,
+          stagger: 0.03,
+          ease: "power2.out",
+        },
+        0.4,
+      )
 
-    .to(slider, {
-      y: 0,
-      opacity: 1,
-      duration: 1.2,
-      ease: "power3.out",
-      force3D: true
-    }, 0.5);
-
+      .to(
+        slider,
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.2,
+          ease: "power3.out",
+          force3D: true,
+        },
+        0.5,
+      );
   });
 });
 
 // About logo marquee animation
 (() => {
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
- 
-      const aboutLogoMarquee = new Splide(".about-logo-marquee", {
-        type: "loop",
-        autoWidth: true,      // each slide is as wide as its logo
-        gap: "80px",
-        arrows: false,
-        pagination: false,
-        drag: false,
-        autoScroll: reduceMotion
-          ? false
-          : { speed: 0.6, pauseOnHover: false, pauseOnFocus: false },
-        breakpoints: {
-          767: { gap: "56px" },
-        },
-      });
- 
-      aboutLogoMarquee.mount(window.splide.Extensions);
- 
-      // autoWidth measures the slides, so re-measure once the logo images have loaded
-      window.addEventListener("load", () => aboutLogoMarquee.refresh());
-    })();
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  const aboutLogoMarquee = new Splide(".about-logo-marquee", {
+    type: "loop",
+    autoWidth: true, // each slide is as wide as its logo
+    gap: "80px",
+    arrows: false,
+    pagination: false,
+    drag: false,
+    autoScroll: reduceMotion
+      ? false
+      : { speed: 0.6, pauseOnHover: false, pauseOnFocus: false },
+    breakpoints: {
+      767: { gap: "56px" },
+    },
+  });
+
+  aboutLogoMarquee.mount(window.splide.Extensions);
+
+  // autoWidth measures the slides, so re-measure once the logo images have loaded
+  window.addEventListener("load", () => aboutLogoMarquee.refresh());
+})();
 
 // About heading color change on scroll
 document.addEventListener("DOMContentLoaded", () => {
@@ -408,7 +422,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Split heading into words
   const split = SplitText.create(".about__heading", {
-    type: "words"
+    type: "words",
   });
 
   // Animate word colors on scroll
@@ -419,8 +433,8 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: ".about__heading",
       start: "top 80%",
       end: "bottom 40%",
-      scrub: true
-    }
+      scrub: true,
+    },
   });
 });
 
@@ -481,7 +495,6 @@ document.addEventListener("DOMContentLoaded", () => {
     : Promise.resolve()
   ).then(setup);
 });
-
 
 // Heading reveal animation
 document.addEventListener("DOMContentLoaded", () => {
@@ -797,40 +810,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Impact section video player
 document.addEventListener("DOMContentLoaded", () => {
-        const section = document.querySelector("#impact");
-        const video = section && section.querySelector(".impact-video video");
-        const btn = section && section.querySelector("[data-video-toggle]");
-        if (!video || !btn) return;
- 
-        const iconPlay = btn.querySelector('[data-icon="play"]');
-        const iconPause = btn.querySelector('[data-icon="pause"]');
- 
-        // keep the button in sync with the real video state
-        const sync = () => {
-          const playing = !video.paused;
-          iconPlay.classList.toggle("hidden", playing);
-          iconPause.classList.toggle("hidden", !playing);
-          btn.setAttribute("aria-label", playing ? "Pause video" : "Play video");
-        };
- 
-        btn.addEventListener("click", () => {
-          if (video.paused) {
-            video.play().catch(() => {});
-          } else {
-            video.pause();
-          }
-        });
- 
-        video.addEventListener("play", sync);
-        video.addEventListener("pause", sync);
- 
-        // reduced motion: don't autoplay, let the person press play
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-          video.pause();
-        }
- 
-        sync();
-      });
+  const section = document.querySelector("#impact");
+  const video = section && section.querySelector(".impact-video video");
+  const btn = section && section.querySelector("[data-video-toggle]");
+  if (!video || !btn) return;
+
+  const iconPlay = btn.querySelector('[data-icon="play"]');
+  const iconPause = btn.querySelector('[data-icon="pause"]');
+
+  // keep the button in sync with the real video state
+  const sync = () => {
+    const playing = !video.paused;
+    iconPlay.classList.toggle("hidden", playing);
+    iconPause.classList.toggle("hidden", !playing);
+    btn.setAttribute("aria-label", playing ? "Pause video" : "Play video");
+  };
+
+  btn.addEventListener("click", () => {
+    if (video.paused) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
+  });
+
+  video.addEventListener("play", sync);
+  video.addEventListener("pause", sync);
+
+  // reduced motion: don't autoplay, let the person press play
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    video.pause();
+  }
+
+  sync();
+});
 
 // Heading blur reveal animation
 document.addEventListener("DOMContentLoaded", () => {
@@ -906,7 +919,6 @@ document.addEventListener("DOMContentLoaded", () => {
     : Promise.resolve()
   ).then(setup);
 });
-
 
 // Counter animation
 document.addEventListener("DOMContentLoaded", () => {
@@ -1001,7 +1013,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
 // Testimonial slider (desktop: stacked cards, mobile: infinite slider)
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -1015,7 +1026,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const track = section.querySelector(".testimonial-stack");
 
   const cards = gsap.utils.toArray(
-    section.querySelectorAll(".testimonial-card")
+    section.querySelectorAll(".testimonial-card"),
   );
 
   if (!slider || !viewport || !track || cards.length < 2) return;
@@ -1192,7 +1203,7 @@ document.addEventListener("DOMContentLoaded", () => {
           card.classList.remove("splide__slide");
         });
       };
-    }
+    },
   );
 
   // =============================================
@@ -1210,3 +1221,70 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// FAQ accordion (one open at a time)
+document.addEventListener("DOMContentLoaded", () => {
+  const faq = document.querySelector(".home-faq");
+  if (!faq) return;
+
+  const items = Array.from(faq.querySelectorAll(".faq-item"));
+  if (!items.length) return;
+
+  // ---- tweak these ----
+  const DURATION = 0.6;
+  const EASE = "power3.inOut";
+  // ---------------------
+
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  const setItem = (item, open) => {
+    const trigger = item.querySelector(".faq-trigger");
+    const panel = item.querySelector(".faq-panel");
+    const icon = item.querySelector(".faq-icon");
+    const duration = reduceMotion ? 0 : DURATION;
+
+    trigger.setAttribute("aria-expanded", String(open));
+    item.classList.toggle("is-open", open);
+
+    // closed panels carry Tailwind's `invisible`; take over visibility from here
+    if (open) panel.style.visibility = "visible";
+
+    gsap.to(panel, {
+      height: open ? "auto" : 0,
+      duration,
+      ease: EASE,
+      overwrite: true,
+      onComplete: () => {
+        if (!open) panel.style.visibility = "hidden";
+        // heights changed, so re-measure any ScrollTrigger below this section
+        if (window.ScrollTrigger) ScrollTrigger.refresh();
+      },
+    });
+
+    gsap.to(icon, {
+      rotation: open ? 180 : 0,
+      duration,
+      ease: EASE,
+      overwrite: true,
+    });
+  };
+
+  items.forEach((item) => {
+    const trigger = item.querySelector(".faq-trigger");
+    trigger.addEventListener("click", () => {
+      const isOpen = item.classList.contains("is-open");
+
+      if (isOpen) {
+        setItem(item, false);
+        return;
+      }
+
+      items.forEach((other) => {
+        if (other !== item && other.classList.contains("is-open"))
+          setItem(other, false);
+      });
+      setItem(item, true);
+    });
+  });
+});
