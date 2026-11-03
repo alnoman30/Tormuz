@@ -276,6 +276,7 @@
       }
     });
   });
+
   // ──======================================= Hero marquee slider ======================================== ──
   run("Hero slider", () => {
     const sliderEl = $(".hero-slider");
@@ -1463,161 +1464,160 @@
       ).observe(video);
     }
   });
-})();
 
-// content rise when scrolled into view (e.g. project cards, about logos, etc.)
-document.addEventListener("DOMContentLoaded", () => {
-  gsap.registerPlugin(ScrollTrigger);
+  // ──======================================= Content rise on scroll ======================================== ──
+  // (e.g. about logos, rise-item-anim elements)
+  run("Content rise", () => {
+    if (!hasST) return;
 
-  const mm = gsap.matchMedia();
+    const items = gsap.utils.toArray(".rise-item-anim");
+    if (!items.length) return;
 
-  mm.add("(prefers-reduced-motion: no-preference)", () => {
-    const cards = gsap.utils.toArray(".rise-item-anim");
-    if (!cards.length) return;
+    const mm = gsap.matchMedia();
 
-    gsap.set(cards, { y: 60, autoAlpha: 0 });
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
+      gsap.set(items, { y: 60, autoAlpha: 0 });
 
-    ScrollTrigger.batch(cards, {
-      start: "top 85%",
-      once: true,
-      onEnter: (batch) =>
-        gsap.to(batch, {
-          y: 0,
-          autoAlpha: 1,
-          duration: 0.8,
-          ease: "power3.out",
-          stagger: 0.12,
-          overwrite: true,
-          clearProps: "transform",
-        }),
+      ScrollTrigger.batch(items, {
+        start: "top 85%",
+        once: true,
+        onEnter: (batch) =>
+          gsap.to(batch, {
+            y: 0,
+            autoAlpha: 1,
+            duration: 0.8,
+            ease: "power3.out",
+            stagger: 0.12,
+            overwrite: true,
+            clearProps: "transform",
+          }),
+      });
     });
+
+    onLoad(() => ScrollTrigger.refresh());
   });
 
-  // Recalculate trigger positions once images have loaded
-  window.addEventListener("load", () => ScrollTrigger.refresh());
-});
+  // ──======================================= Services page: pinned heading + stacking cards ======================================== ──
+  run("Services pinning", () => {
+    if (!hasST) return;
 
-// service pinning: heading stays pinned while the cards scroll up and cover each other
-(function () {
-  gsap.registerPlugin(ScrollTrigger);
+    const section = $("#services-list");
+    if (!section) return;
 
-  const section = document.querySelector("#services-list");
-  if (!section) return;
+    const heading = $(".service-page-pin", section);
+    const grid = $(".grid.grid-cols-1", section);
+    if (!heading || !grid) return;
 
-  const heading = section.querySelector(".service-page-pin");
-  const grid = section.querySelector(".grid.grid-cols-1");
-  if (!heading || !grid) return;
+    // The block holding "Provided services" label + h1
+    const headBlock = heading.parentElement;
+    const cards = gsap.utils.toArray(grid.children);
+    if (!headBlock || cards.length < 2) return;
 
-  // The block holding "Provided services" label + h1
-  const headBlock = heading.parentElement;
-  const cards = gsap.utils.toArray(grid.children);
-  if (cards.length < 2) return;
+    const NAV_OFFSET = 100; // gap from top of viewport (your header height)
+    const GAP = 40; // space between pinned heading and first card
+    const STEP = 0; // 0 = each card fully covers the previous one (use e.g. 14 to peek)
 
-  const NAV_OFFSET = 100; // gap from top of viewport (your header height)
-  const GAP = 40; // space between pinned heading and first card
-  const STEP = 0; // 0 = each card fully covers the previous one (use e.g. 14 to peek)
+    // Where the first card sticks: below the pinned heading
+    const stackTop = () => NAV_OFFSET + headBlock.offsetHeight + GAP;
+    const lastTop = () => stackTop() + (cards.length - 1) * STEP;
 
-  // Where the first card sticks: below the pinned heading
-  const stackTop = () => NAV_OFFSET + headBlock.offsetHeight + GAP;
-  const lastTop = () => stackTop() + (cards.length - 1) * STEP;
+    const mm = gsap.matchMedia();
 
-  const mm = gsap.matchMedia();
+    mm.add("(min-width: 0px)", () => {
+      const last = cards[cards.length - 1];
 
-  mm.add("(min-width: 0px)", () => {
-    const last = cards[cards.length - 1];
+      // Heading stays above the cards, so cards never cover it
+      headBlock.style.position = "relative";
+      headBlock.style.zIndex = cards.length + 5;
 
-    // Heading stays above the cards, so cards never cover it
-    headBlock.style.position = "relative";
-    headBlock.style.zIndex = cards.length + 5;
-
-    // Pin the heading block until the last card has arrived
-    ScrollTrigger.create({
-      trigger: headBlock,
-      start: `top top+=${NAV_OFFSET}`,
-      endTrigger: last,
-      end: () => `top top+=${lastTop()}`,
-      pin: true,
-      pinSpacing: false,
-      invalidateOnRefresh: true,
-    });
-
-    cards.forEach((card, i) => {
-      card.style.transformOrigin = "50% 0%";
-      card.style.zIndex = i + 1;
-
-      if (i < cards.length - 1) {
-        // Hold this card until the last card arrives
-        ScrollTrigger.create({
-          trigger: card,
-          start: () => `top top+=${stackTop() + i * STEP}`,
-          endTrigger: last,
-          end: () => `top top+=${lastTop()}`,
-          pin: true,
-          pinSpacing: false,
-          invalidateOnRefresh: true,
-        });
-      }
-    });
-
-    return () => {
-      gsap.set(cards, { clearProps: "transform,transformOrigin,zIndex" });
-      headBlock.style.position = "";
-      headBlock.style.zIndex = "";
-    };
-  });
-
-  window.addEventListener("load", () => ScrollTrigger.refresh());
-})();
-
-
-// Image reveal
-document.addEventListener("DOMContentLoaded", () => {
-  gsap.registerPlugin(ScrollTrigger);
-
-  const mm = gsap.matchMedia();
-
-  mm.add("(prefers-reduced-motion: no-preference)", () => {
-
-    // ...your .team-content-card animation here...
-
-    // Image reveal: top to bottom wipe, image stays in place
-    gsap.utils.toArray(".image-reveal").forEach((container) => {
-      const image = container.querySelector("img");
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: container,
-          start: "top 85%",
-          once: true,
-        },
+      // Pin the heading block until the last card has arrived
+      ScrollTrigger.create({
+        trigger: headBlock,
+        start: `top top+=${NAV_OFFSET}`,
+        endTrigger: last,
+        end: () => `top top+=${lastTop()}`,
+        pin: true,
+        pinSpacing: false,
+        invalidateOnRefresh: true,
       });
 
-      tl.fromTo(
-        container,
-        { clipPath: "inset(0% 0% 100% 0%)" },
-        {
-          clipPath: "inset(0% 0% 0% 0%)",
-          duration: 1.5,
-          ease: "power2.out",
-          clearProps: "clipPath",
-        }
-      );
+      cards.forEach((card, i) => {
+        card.style.transformOrigin = "50% 0%";
+        card.style.zIndex = i + 1;
 
-      // Optional: small settle-in scale, no movement
-      if (image) {
-        tl.from(
-          image,
-          {
-            scale: 1.15,
-            duration: 1.5,
-            ease: "power2.out",
-            clearProps: "transform",
-          },
-          "<"
-        );
-      }
+        if (i < cards.length - 1) {
+          // Hold this card until the last card arrives
+          ScrollTrigger.create({
+            trigger: card,
+            start: () => `top top+=${stackTop() + i * STEP}`,
+            endTrigger: last,
+            end: () => `top top+=${lastTop()}`,
+            pin: true,
+            pinSpacing: false,
+            invalidateOnRefresh: true,
+          });
+        }
+      });
+
+      return () => {
+        gsap.set(cards, { clearProps: "transform,transformOrigin,zIndex" });
+        headBlock.style.position = "";
+        headBlock.style.zIndex = "";
+      };
     });
+
+    onLoad(() => ScrollTrigger.refresh());
   });
 
-  window.addEventListener("load", () => ScrollTrigger.refresh());
-});
+  // ──======================================= Image reveal ======================================== ──
+  run("Image reveal", () => {
+    if (!hasST) return;
+
+    const containers = gsap.utils.toArray(".image-reveal");
+    if (!containers.length) return;
+
+    const mm = gsap.matchMedia();
+
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
+      // Image reveal: top to bottom wipe, image stays in place
+      containers.forEach((container) => {
+        const image = $("img", container);
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: container,
+            start: "top 85%",
+            once: true,
+          },
+        });
+
+        tl.fromTo(
+          container,
+          { clipPath: "inset(0% 0% 100% 0%)" },
+          {
+            clipPath: "inset(0% 0% 0% 0%)",
+            duration: 1.5,
+            ease: "power2.out",
+            clearProps: "clipPath",
+          },
+        );
+
+        // Optional: small settle-in scale, no movement
+        if (image) {
+          tl.from(
+            image,
+            {
+              scale: 1.15,
+              duration: 1.5,
+              ease: "power2.out",
+              clearProps: "transform",
+            },
+            "<",
+          );
+        }
+      });
+    });
+
+    onLoad(() => ScrollTrigger.refresh());
+  });
+})();
