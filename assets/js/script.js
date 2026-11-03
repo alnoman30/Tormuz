@@ -1580,39 +1580,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ...your .team-content-card animation here...
 
-    // Image reveal: clip mask top to bottom + small blur
-    gsap.utils.toArray(".image-reveal").forEach((el) => {
-      // Blur the inner image if there is one, otherwise the element itself
-      const blurTarget = el.querySelector("img") || el;
+    // Image reveal: top to bottom wipe, image stays in place
+    gsap.utils.toArray(".image-reveal").forEach((container) => {
+      const image = container.querySelector("img");
 
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: el,
+          trigger: container,
           start: "top 85%",
           once: true,
         },
       });
 
       tl.fromTo(
-        el,
+        container,
         { clipPath: "inset(0% 0% 100% 0%)" },
         {
           clipPath: "inset(0% 0% 0% 0%)",
-          duration: 1.2,
-          ease: "power3.inOut",
+          duration: 1.5,
+          ease: "power2.out",
           clearProps: "clipPath",
         }
-      ).fromTo(
-        blurTarget,
-        { filter: "blur(6px)" },
-        {
-          filter: "blur(0px)",
-          duration: 1.2,
-          ease: "power3.out",
-          clearProps: "filter",
-        },
-        0
       );
+
+      // Optional: small settle-in scale, no movement
+      if (image) {
+        tl.from(
+          image,
+          {
+            scale: 1.15,
+            duration: 1.5,
+            ease: "power2.out",
+            clearProps: "transform",
+          },
+          "<"
+        );
+      }
     });
   });
 
