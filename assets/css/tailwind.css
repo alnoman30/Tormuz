@@ -207,6 +207,12 @@ html.lenis body {
 .menu-link:hover .menu-link-arrow-clone {
   transform: translate(0, 0);
 }
+.menu-link.is-active .menu-link-text {
+  font-weight: 500;
+}
+.menu-link.is-active .menu-link-icon {
+  opacity: 1;
+}
 
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {

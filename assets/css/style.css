@@ -50,12 +50,10 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-neutral-900: oklch(20.5% 0 0);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
-    --container-md: 28rem;
     --text-xs: 0.75rem;
     --text-xs--line-height: calc(1 / 0.75);
     --text-sm: 0.875rem;
@@ -68,13 +66,8 @@
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
-    --text-3xl: 1.875rem;
-    --text-3xl--line-height: calc(2.25 / 1.875);
     --font-weight-normal: 400;
     --font-weight-medium: 500;
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
-    --leading-relaxed: 1.625;
     --radius-md: 0.375rem;
     --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
@@ -423,11 +416,17 @@
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
+  .mt-12 {
+    margin-top: calc(var(--spacing) * 12);
+  }
   .mt-16 {
     margin-top: calc(var(--spacing) * 16);
   }
   .mb-1\.5 {
     margin-bottom: calc(var(--spacing) * 1.5);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
   }
   .mb-3 {
     margin-bottom: calc(var(--spacing) * 3);
@@ -532,6 +531,9 @@
   .h-9 {
     height: calc(var(--spacing) * 9);
   }
+  .h-11 {
+    height: calc(var(--spacing) * 11);
+  }
   .h-15 {
     height: calc(var(--spacing) * 15);
   }
@@ -555,6 +557,12 @@
   }
   .min-h-99\.5 {
     min-height: calc(var(--spacing) * 99.5);
+  }
+  .min-h-\[80px\] {
+    min-height: 80px;
+  }
+  .w-4 {
+    width: calc(var(--spacing) * 4);
   }
   .w-7 {
     width: calc(var(--spacing) * 7);
@@ -604,11 +612,17 @@
   .max-w-82\.5 {
     max-width: calc(var(--spacing) * 82.5);
   }
+  .max-w-85 {
+    max-width: calc(var(--spacing) * 85);
+  }
   .max-w-92\.5 {
     max-width: calc(var(--spacing) * 92.5);
   }
   .max-w-99 {
     max-width: calc(var(--spacing) * 99);
+  }
+  .max-w-110 {
+    max-width: calc(var(--spacing) * 110);
   }
   .max-w-123 {
     max-width: calc(var(--spacing) * 123);
@@ -621,6 +635,9 @@
   }
   .max-w-155 {
     max-width: calc(var(--spacing) * 155);
+  }
+  .max-w-185 {
+    max-width: calc(var(--spacing) * 185);
   }
   .max-w-200 {
     max-width: calc(var(--spacing) * 200);
@@ -696,6 +713,9 @@
   .resize {
     resize: both;
   }
+  .resize-y {
+    resize: vertical;
+  }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
@@ -755,6 +775,9 @@
   }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
+  }
+  .gap-5 {
+    gap: calc(var(--spacing) * 5);
   }
   .gap-6 {
     gap: calc(var(--spacing) * 6);
@@ -847,11 +870,17 @@
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
   }
+  .border-\[\#C9D1DD\] {
+    border-color: #C9D1DD;
+  }
   .border-\[\#D7DCE8\] {
     border-color: #D7DCE8;
   }
   .border-\[\#d0d8e4\] {
     border-color: #d0d8e4;
+  }
+  .border-transparent {
+    border-color: transparent;
   }
   .border-white\/10 {
     border-color: color-mix(in srgb, #fff 10%, transparent);
@@ -1038,6 +1067,9 @@
   .pt-3\.5 {
     padding-top: calc(var(--spacing) * 3.5);
   }
+  .pt-4 {
+    padding-top: calc(var(--spacing) * 4);
+  }
   .pt-5 {
     padding-top: calc(var(--spacing) * 5);
   }
@@ -1073,6 +1105,9 @@
   }
   .pb-9 {
     padding-bottom: calc(var(--spacing) * 9);
+  }
+  .pl-5\.5 {
+    padding-left: calc(var(--spacing) * 5.5);
   }
   .text-center {
     text-align: center;
@@ -1115,6 +1150,9 @@
   }
   .text-\[24px\] {
     font-size: 24px;
+  }
+  .text-\[28px\] {
+    font-size: 28px;
   }
   .text-\[32px\] {
     font-size: 32px;
@@ -1392,6 +1430,11 @@
       color: #5A6271;
     }
   }
+  .placeholder\:text-\[\#8A8F9A\] {
+    &::placeholder {
+      color: #8A8F9A;
+    }
+  }
   .after\:absolute {
     &::after {
       content: var(--tw-content);
@@ -1446,6 +1489,13 @@
       }
     }
   }
+  .hover\:bg-\[\#545B69\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #545B69;
+      }
+    }
+  }
   .hover\:bg-white\/35 {
     &:hover {
       @media (hover: hover) {
@@ -1453,6 +1503,13 @@
         @supports (color: color-mix(in lab, red, red)) {
           background-color: color-mix(in oklab, var(--color-white) 35%, transparent);
         }
+      }
+    }
+  }
+  .hover\:text-\[\#1E1E1E\] {
+    &:hover {
+      @media (hover: hover) {
+        color: #1E1E1E;
       }
     }
   }
@@ -1469,6 +1526,11 @@
         --tw-shadow: 0 4px 20px var(--tw-shadow-color, rgba(0,0,0,0.15));
         box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
       }
+    }
+  }
+  .focus\:border-\[\#1E1E1E\] {
+    &:focus {
+      border-color: #1E1E1E;
     }
   }
   .focus-visible\:outline-2 {
@@ -1524,6 +1586,11 @@
       margin-top: calc(var(--spacing) * 0);
     }
   }
+  .sm\:mb-3 {
+    @media (width >= 40rem) {
+      margin-bottom: calc(var(--spacing) * 3);
+    }
+  }
   .sm\:aspect-video {
     @media (width >= 40rem) {
       aspect-ratio: var(--aspect-video);
@@ -1537,6 +1604,11 @@
   .sm\:grid-cols-2 {
     @media (width >= 40rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .sm\:grid-cols-3 {
+    @media (width >= 40rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
   .sm\:flex-row {
@@ -1557,6 +1629,11 @@
   .sm\:justify-between {
     @media (width >= 40rem) {
       justify-content: space-between;
+    }
+  }
+  .sm\:gap-4 {
+    @media (width >= 40rem) {
+      gap: calc(var(--spacing) * 4);
     }
   }
   .sm\:gap-x-6 {
@@ -1674,6 +1751,11 @@
   .md\:mt-10 {
     @media (width >= 48rem) {
       margin-top: calc(var(--spacing) * 10);
+    }
+  }
+  .md\:mt-12 {
+    @media (width >= 48rem) {
+      margin-top: calc(var(--spacing) * 12);
     }
   }
   .md\:mt-16 {
@@ -1874,6 +1956,11 @@
   .md\:p-8 {
     @media (width >= 48rem) {
       padding: calc(var(--spacing) * 8);
+    }
+  }
+  .md\:p-10 {
+    @media (width >= 48rem) {
+      padding: calc(var(--spacing) * 10);
     }
   }
   .md\:p-12 {
@@ -2406,6 +2493,12 @@ html.lenis, html.lenis body {
 }
 .menu-link:hover .menu-link-arrow-clone {
   transform: translate(0, 0);
+}
+.menu-link.is-active .menu-link-text {
+  font-weight: 500;
+}
+.menu-link.is-active .menu-link-icon {
+  opacity: 1;
 }
 @media (prefers-reduced-motion: reduce) {
   .menu-link-text, .menu-link-arrow {

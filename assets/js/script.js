@@ -243,6 +243,39 @@
     });
   });
 
+  // menu active
+  run("Menu active page", () => {
+    const links = document.querySelectorAll(".navbar-menu .menu-link");
+    if (!links.length) return;
+
+    // "/service.html", "/service", "/" -> "service", "service", "index"
+    const normalize = (path) => {
+      const file = path.split("/").filter(Boolean).pop() || "index";
+      return file.replace(/\.html?$/i, "").toLowerCase();
+    };
+
+    const current = normalize(window.location.pathname);
+
+    links.forEach((link) => {
+      const href = link.getAttribute("href");
+      if (!href || href.startsWith("#")) return;
+
+      const target = normalize(new URL(href, window.location.href).pathname);
+
+      // exact match, or a child page like "project-single" under "project"
+      const isActive =
+        target === current ||
+        (target !== "index" && current.startsWith(target + "-"));
+
+      link.classList.toggle("is-active", isActive);
+
+      if (isActive) {
+        link.setAttribute("aria-current", "page");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  });
   // ──======================================= Hero marquee slider ======================================== ──
   run("Hero slider", () => {
     const sliderEl = $(".hero-slider");
@@ -1464,40 +1497,39 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("load", () => ScrollTrigger.refresh());
 });
 
-
 // service pinning: heading stays pinned while the cards scroll up and cover each other
 (function () {
   gsap.registerPlugin(ScrollTrigger);
- 
+
   const section = document.querySelector("#services-list");
   if (!section) return;
- 
+
   const heading = section.querySelector(".service-page-pin");
   const grid = section.querySelector(".grid.grid-cols-1");
   if (!heading || !grid) return;
- 
+
   // The block holding "Provided services" label + h1
   const headBlock = heading.parentElement;
   const cards = gsap.utils.toArray(grid.children);
   if (cards.length < 2) return;
- 
-  const NAV_OFFSET = 100;  // gap from top of viewport (your header height)
-  const GAP = 40;          // space between pinned heading and first card
-  const STEP = 0;          // 0 = each card fully covers the previous one (use e.g. 14 to peek)
- 
+
+  const NAV_OFFSET = 100; // gap from top of viewport (your header height)
+  const GAP = 40; // space between pinned heading and first card
+  const STEP = 0; // 0 = each card fully covers the previous one (use e.g. 14 to peek)
+
   // Where the first card sticks: below the pinned heading
   const stackTop = () => NAV_OFFSET + headBlock.offsetHeight + GAP;
   const lastTop = () => stackTop() + (cards.length - 1) * STEP;
- 
+
   const mm = gsap.matchMedia();
- 
+
   mm.add("(min-width: 0px)", () => {
     const last = cards[cards.length - 1];
- 
+
     // Heading stays above the cards, so cards never cover it
     headBlock.style.position = "relative";
     headBlock.style.zIndex = cards.length + 5;
- 
+
     // Pin the heading block until the last card has arrived
     ScrollTrigger.create({
       trigger: headBlock,
@@ -1508,11 +1540,11 @@ document.addEventListener("DOMContentLoaded", () => {
       pinSpacing: false,
       invalidateOnRefresh: true,
     });
- 
+
     cards.forEach((card, i) => {
       card.style.transformOrigin = "50% 0%";
       card.style.zIndex = i + 1;
- 
+
       if (i < cards.length - 1) {
         // Hold this card until the last card arrives
         ScrollTrigger.create({
@@ -1526,13 +1558,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
     });
- 
+
     return () => {
       gsap.set(cards, { clearProps: "transform,transformOrigin,zIndex" });
       headBlock.style.position = "";
       headBlock.style.zIndex = "";
     };
   });
- 
+
   window.addEventListener("load", () => ScrollTrigger.refresh());
 })();
