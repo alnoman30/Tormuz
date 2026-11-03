@@ -62,7 +62,7 @@ html {
 }
 
 .container {
-  max-width: 1435px;
+  max-width: 1335px;
   width: 100%;
   margin: auto;
   padding-inline: 20px;
@@ -93,7 +93,7 @@ body {
   height: 100%;
   font-family: var(--font-inter);
   overflow-x: hidden;
-  background-color: #ffffff;
+  background-color: #EEF0F6;
 }
 
 .chivo-mono {
@@ -316,13 +316,13 @@ html.lenis body {
 }
 
 /* ---------- Social links ---------- */
-.hero__social-link {
+.hero-social-link {
   position: relative;
   display: inline-block;
 }
 
 /* underline grows from a small dash to full width on hover */
-.hero__social-link::after {
+.hero-social-link::after {
   content: "";
   position: absolute;
   left: 0;
@@ -333,7 +333,7 @@ html.lenis body {
   transition: width 0.6s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
-.hero__social-link:hover::after {
+.hero-social-link:hover::after {
   width: 100%;
 }
 
@@ -344,29 +344,29 @@ html.lenis body {
   overflow: hidden;
 }
 
-.hero__social-text {
+.hero-social-text {
   display: block;
   transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
-.hero__social-text--clone {
+.hero-social-text-clone {
   position: absolute;
   left: 0;
   top: 0;
   transform: translateY(110%);
 }
 
-.hero__social-link:hover .hero__social-text {
+.hero-social-link:hover .hero-social-text {
   transform: translateY(-110%);
 }
 
-.hero__social-link:hover .hero__social-text--clone {
+.hero-social-link:hover .hero-social-text-clone {
   transform: translateY(0);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero__social-link::after,
-  .hero__social-text {
+  .hero-social-link::after,
+  .hero-social-text {
     transition: none;
   }
 }
@@ -872,3 +872,28 @@ html.lenis body {
     transition: none;
   }
 }
+
+
+/* ABOUT PAGE CSS */
+/* Show the play icon when the video is paused, the pause icon otherwise */
+.about-video-icon-play { display: none; }
+.about-video-toggle.is-paused .about-video-icon-play { display: block; }
+.about-video-toggle.is-paused .about-video-icon-pause { display: none; }
+
+/* Base styling for the fill overlay */
+.awards-row-fill {
+  position: absolute;
+  inset: 0;
+  background-color: #414141;
+  z-index: 1;
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.awards-row:hover .awards-row-fill {
+  transform: scaleY(1);
+}
+
+/*  */
