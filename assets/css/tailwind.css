@@ -93,7 +93,7 @@ body {
   height: 100%;
   font-family: var(--font-inter);
   overflow-x: hidden;
-  background-color: #EEF0F6;
+  background-color: #eef0f6;
 }
 
 .chivo-mono {
@@ -873,12 +873,17 @@ html.lenis body {
   }
 }
 
-
 /* ABOUT PAGE CSS */
 /* Show the play icon when the video is paused, the pause icon otherwise */
-.about-video-icon-play { display: none; }
-.about-video-toggle.is-paused .about-video-icon-play { display: block; }
-.about-video-toggle.is-paused .about-video-icon-pause { display: none; }
+.about-video-icon-play {
+  display: none;
+}
+.about-video-toggle.is-paused .about-video-icon-play {
+  display: block;
+}
+.about-video-toggle.is-paused .about-video-icon-pause {
+  display: none;
+}
 
 /* Base styling for the fill overlay */
 .awards-row-fill {
