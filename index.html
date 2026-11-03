@@ -27,7 +27,7 @@
       >
         <!-- Top bar (fixed 60px height) -->
         <div
-          class="navbar__bar relative flex h-15 items-center justify-between px-5"
+          class="navbar-bar relative flex h-15 items-center justify-between px-5"
         >
           <!-- Toggle -->
           <button
@@ -37,7 +37,7 @@
             aria-controls="navbar-menu"
             aria-label="Toggle menu"
           >
-            <span class="menu-toggle__lines relative block h-3.25 w-10.5">
+            <span class="menu-toggle-lines relative block h-3.25 w-10.5">
               <span
                 class="line-1 absolute left-0 top-0 block h-px w-full bg-neutral-900"
               ></span>
@@ -50,7 +50,7 @@
           <!-- Center logo (PNG) -->
           <a
             href="index.html"
-            class="navbar__logo absolute left-1/2 -translate-x-1/2"
+            class="navbar-logo absolute left-1/2 -translate-x-1/2"
             aria-label="Home"
           >
             <img
@@ -61,7 +61,7 @@
           </a>
 
           <!-- CTA -->
-          <a href="#" class="navbar__cta px-4 text-base leading-6 text-[1E1E1E]"
+          <a href="#" class="navbar-cta px-4 text-base leading-6 text-[#1E1E1E]"
             >Start</a
           >
         </div>
@@ -69,440 +69,342 @@
         <!-- Dropdown menu -->
         <div
           id="navbar-menu"
-          class="navbar__menu h-0 overflow-hidden"
+          class="navbar-menu h-0 overflow-hidden"
           aria-hidden="true"
         >
           <div
-            class="navbar__menu-inner grid grid-cols-2 gap-x-4 px-5 pb-3.5 pt-3.5 md:grid-cols-[1fr_194px_320px] lg:grid-cols-[1fr_194px_496px] md:px-6"
+            class="navbar-menu-inner grid grid-cols-2 gap-x-4 px-5 pb-3.5 pt-3.5 md:grid-cols-[1fr_194px_320px] lg:grid-cols-[1fr_194px_496px] md:px-6"
           >
             <!-- Column 1 -->
             <ul
-              class="menu-list menu-list--primary flex w-full max-w-42 flex-col"
+              class="menu-list menu-list-primary flex w-full max-w-42 flex-col"
             >
               <li class="menu-item">
                 <a
                   href="#"
-                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
-                  ><span class="menu-link__label"
-                    ><span class="menu-link__text">Home</span
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Home</span
                     ><span
-                      class="menu-link__text menu-link__text--clone"
+                      class="menu-link-text menu-link-text-clone"
                       aria-hidden="true"
                       >Home</span
                     ></span
-                  ><span class="menu-link__icon"
-                    ><svg
-                      class="menu-link__arrow h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg
-                    ><svg
-                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
                 ></a>
               </li>
               <li class="menu-item">
                 <a
                   href="#"
-                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
-                  ><span class="menu-link__label"
-                    ><span class="menu-link__text">About</span
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">About</span
                     ><span
-                      class="menu-link__text menu-link__text--clone"
+                      class="menu-link-text menu-link-text-clone"
                       aria-hidden="true"
                       >About</span
                     ></span
-                  ><span class="menu-link__icon"
-                    ><svg
-                      class="menu-link__arrow h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg
-                    ><svg
-                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
                 ></a>
               </li>
               <li class="menu-item">
                 <a
                   href="#"
-                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
-                  ><span class="menu-link__label"
-                    ><span class="menu-link__text">Project</span
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Project</span
                     ><span
-                      class="menu-link__text menu-link__text--clone"
+                      class="menu-link-text menu-link-text-clone"
                       aria-hidden="true"
                       >Project</span
                     ></span
-                  ><span class="menu-link__icon"
-                    ><svg
-                      class="menu-link__arrow h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg
-                    ><svg
-                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
                 ></a>
               </li>
               <li class="menu-item">
                 <a
                   href="#"
-                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
-                  ><span class="menu-link__label"
-                    ><span class="menu-link__text">Service</span
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Service</span
                     ><span
-                      class="menu-link__text menu-link__text--clone"
+                      class="menu-link-text menu-link-text-clone"
                       aria-hidden="true"
                       >Service</span
                     ></span
-                  ><span class="menu-link__icon"
-                    ><svg
-                      class="menu-link__arrow h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg
-                    ><svg
-                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
                 ></a>
               </li>
               <li class="menu-item">
                 <a
                   href="#"
-                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
-                  ><span class="menu-link__label"
-                    ><span class="menu-link__text">Blog</span
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Blog</span
                     ><span
-                      class="menu-link__text menu-link__text--clone"
+                      class="menu-link-text menu-link-text-clone"
                       aria-hidden="true"
                       >Blog</span
                     ></span
-                  ><span class="menu-link__icon"
-                    ><svg
-                      class="menu-link__arrow h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg
-                    ><svg
-                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
                 ></a>
               </li>
               <li class="menu-item">
                 <a
                   href="#"
-                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
-                  ><span class="menu-link__label"
-                    ><span class="menu-link__text">Team</span
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Team</span
                     ><span
-                      class="menu-link__text menu-link__text--clone"
+                      class="menu-link-text menu-link-text-clone"
                       aria-hidden="true"
                       >Team</span
                     ></span
-                  ><span class="menu-link__icon"
-                    ><svg
-                      class="menu-link__arrow h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg
-                    ><svg
-                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
                 ></a>
               </li>
               <li class="menu-item">
                 <a
                   href="#"
-                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
-                  ><span class="menu-link__label"
-                    ><span class="menu-link__text">Contact</span
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Contact</span
                     ><span
-                      class="menu-link__text menu-link__text--clone"
+                      class="menu-link-text menu-link-text-clone"
                       aria-hidden="true"
                       >Contact</span
                     ></span
-                  ><span class="menu-link__icon"
-                    ><svg
-                      class="menu-link__arrow h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg
-                    ><svg
-                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
                 ></a>
               </li>
             </ul>
 
             <!-- Column 2 -->
             <ul
-              class="menu-list menu-list--secondary flex w-full max-w-42 flex-col"
+              class="menu-list menu-list-secondary flex w-full max-w-42 flex-col"
             >
               <li class="menu-item">
                 <a
                   href="#"
-                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
-                  ><span class="menu-link__label"
-                    ><span class="menu-link__text">Project Single</span
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Project Single</span
                     ><span
-                      class="menu-link__text menu-link__text--clone"
+                      class="menu-link-text menu-link-text-clone"
                       aria-hidden="true"
                       >Project Single</span
                     ></span
-                  ><span class="menu-link__icon"
-                    ><svg
-                      class="menu-link__arrow h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg
-                    ><svg
-                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
                 ></a>
               </li>
               <li class="menu-item">
                 <a
                   href="#"
-                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
-                  ><span class="menu-link__label"
-                    ><span class="menu-link__text">Service Single</span
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Service Single</span
                     ><span
-                      class="menu-link__text menu-link__text--clone"
+                      class="menu-link-text menu-link-text-clone"
                       aria-hidden="true"
                       >Service Single</span
                     ></span
-                  ><span class="menu-link__icon"
-                    ><svg
-                      class="menu-link__arrow h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg
-                    ><svg
-                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
                 ></a>
               </li>
               <li class="menu-item">
                 <a
                   href="#"
-                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
-                  ><span class="menu-link__label"
-                    ><span class="menu-link__text">Team Single</span
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Team Single</span
                     ><span
-                      class="menu-link__text menu-link__text--clone"
+                      class="menu-link-text menu-link-text-clone"
                       aria-hidden="true"
                       >Team Single</span
                     ></span
-                  ><span class="menu-link__icon"
-                    ><svg
-                      class="menu-link__arrow h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg
-                    ><svg
-                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
                 ></a>
               </li>
               <li class="menu-item">
                 <a
                   href="#"
-                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
-                  ><span class="menu-link__label"
-                    ><span class="menu-link__text">Blog Single</span
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Blog Single</span
                     ><span
-                      class="menu-link__text menu-link__text--clone"
+                      class="menu-link-text menu-link-text-clone"
                       aria-hidden="true"
                       >Blog Single</span
                     ></span
-                  ><span class="menu-link__icon"
-                    ><svg
-                      class="menu-link__arrow h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg
-                    ><svg
-                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
                 ></a>
               </li>
               <li class="menu-item">
                 <a
                   href="#"
-                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
-                  ><span class="menu-link__label"
-                    ><span class="menu-link__text">Style Guide</span
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Style Guide</span
                     ><span
-                      class="menu-link__text menu-link__text--clone"
+                      class="menu-link-text menu-link-text-clone"
                       aria-hidden="true"
                       >Style Guide</span
                     ></span
-                  ><span class="menu-link__icon"
-                    ><svg
-                      class="menu-link__arrow h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg
-                    ><svg
-                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
                 ></a>
               </li>
               <li class="menu-item">
                 <a
                   href="#"
-                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
-                  ><span class="menu-link__label"
-                    ><span class="menu-link__text">Change log</span
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Change log</span
                     ><span
-                      class="menu-link__text menu-link__text--clone"
+                      class="menu-link-text menu-link-text-clone"
                       aria-hidden="true"
                       >Change log</span
                     ></span
-                  ><span class="menu-link__icon"
-                    ><svg
-                      class="menu-link__arrow h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg
-                    ><svg
-                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
                 ></a>
               </li>
               <li class="menu-item">
                 <a
                   href="#"
-                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[1E1E1E]"
-                  ><span class="menu-link__label"
-                    ><span class="menu-link__text">Licenses</span
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Licenses</span
                     ><span
-                      class="menu-link__text menu-link__text--clone"
+                      class="menu-link-text menu-link-text-clone"
                       aria-hidden="true"
                       >Licenses</span
                     ></span
-                  ><span class="menu-link__icon"
-                    ><svg
-                      class="menu-link__arrow h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg
-                    ><svg
-                      class="menu-link__arrow menu-link__arrow--clone h-3 w-3"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path d="M2 10L10 2M4 2h6v6" /></svg></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
                 ></a>
               </li>
             </ul>
@@ -514,7 +416,7 @@
               <img
                 src="assets/images/navbar-featured.webp"
                 alt="Featured"
-                class="menu-media__image h-full w-full object-cover hover:scale-105 ease-out transition-all duration-500"
+                class="menu-media-image h-full w-full object-cover hover:scale-105 ease-out transition-all duration-500"
               />
             </div>
           </div>
@@ -1721,7 +1623,7 @@
 
     <!--  Our impact on brands -->
     <section id="impact" class="section home-impact bg-white py-6 md:py-16">
-      <div class="container mx-auto px-4">
+      <div class="container">
         <!-- Main grid: 12-col equal split on md, switches back to custom minmax columns on lg -->
         <div
           class="impact-grid grid grid-cols-12 gap-6 md:items-stretch md:gap-8 lg:grid-cols-[minmax(0,1.634fr)_minmax(0,1fr)] lg:gap-10.5"
@@ -2811,6 +2713,524 @@
                 class="absolute bottom-0 left-0 h-px w-7 bg-white transition-all duration-600 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:w-full"
               ></span>
             </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer section -->
+    <section class="section footer bg-[#EEF0F6] py-6 md:py-10">
+      <div class="container">
+        <!-- Card (shape image as background) -->
+        <div
+          class="footer-card relative overflow-hidden rounded-3xl bg-white p-6 md:rounded-[40px] md:p-12 lg:p-17.5"
+          style="
+            background-image: url(&quot;assets/images/footer-inner-shape.webp&quot;);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+          "
+        >
+          <!-- Top: menus + newsletter -->
+          <div
+            class="footer-top grid grid-cols-1 gap-12 lg:grid-cols-[1fr_440px] lg:gap-0"
+          >
+            <!-- Menus (3 columns intact on mobile with adaptive mobile gap, exact original sizes on desktop) -->
+            <div
+              class="footer-menus grid grid-cols-3 gap-x-2 gap-y-10 sm:gap-x-6 lg:grid-cols-[196px_220px_1fr]"
+            >
+              <!-- Main page -->
+              <div class="footer-menu-group">
+                <h3
+                  class="footer-menu-title mb-3 font-chivo text-xs font-normal uppercase leading-5 text-[#1E1E1E] sm:text-sm sm:leading-5.25"
+                >
+                  Main Page
+                </h3>
+                <ul class="footer-menu-list">
+                  <li>
+                    <a
+                      href="/about"
+                      class="footer-link inline-block py-[5px] font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">About</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >About</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/contact"
+                      class="footer-link inline-block py-[5px] font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Contact</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Contact</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/project"
+                      class="footer-link inline-block py-[5px] font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Project</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Project</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/service"
+                      class="footer-link inline-block py-[5px] font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Service</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Service</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/blog"
+                      class="footer-link inline-block py-[5px] font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Blog</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Blog</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Inner page -->
+              <div class="footer-menu-group">
+                <h3
+                  class="footer-menu-title mb-3 font-chivo text-xs font-normal uppercase leading-5 text-[#1E1E1E] sm:text-sm sm:leading-5.25"
+                >
+                  Inner Page
+                </h3>
+                <ul class="footer-menu-list">
+                  <li>
+                    <a
+                      href="#"
+                      class="footer-link inline-block py-[5px] font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Project Single</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Project Single</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="footer-link inline-block py-[5px] font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Service Single</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Service Single</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="footer-link inline-block py-[5px] font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Blog Single</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Blog Single</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="footer-link inline-block py-[5px] font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Team Single</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Team Single</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="footer-link inline-block py-[5px] font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">404</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >404</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Utility page -->
+              <div class="footer-menu-group">
+                <h3
+                  class="footer-menu-title mb-3 font-chivo text-xs font-normal uppercase leading-5 text-[#1E1E1E] sm:text-sm sm:leading-5.25"
+                >
+                  Utility Page
+                </h3>
+                <ul class="footer-menu-list">
+                  <li>
+                    <a
+                      href="#"
+                      class="footer-link inline-block py-[5px] font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Style Guide</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Style Guide</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="footer-link inline-block py-[5px] font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Changelog</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Changelog</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="footer-link inline-block py-[5px] font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Licenses</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Licenses</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="footer-link inline-block py-[5px] font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Password</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Password</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="footer-link inline-block py-[5px] font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Instructions</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Instructions</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Newsletter + socials -->
+            <div
+              class="footer-newsletter flex flex-col justify-between gap-10 lg:gap-0"
+            >
+              <div class="footer-newsletter-form">
+                <p
+                  class="footer-newsletter-title font-inter text-base font-medium leading-6 text-[#1E1E1E]"
+                >
+                  Subscribe to Our Newsletter
+                </p>
+
+                <form class="footer-form mt-4" action="#" method="get">
+                  <div
+                    class="footer-form-field relative flex items-center border-b border-[#D7DCE8]"
+                  >
+                    <label for="newsletter-email" class="sr-only"
+                      >Email address</label
+                    >
+                    <input
+                      id="newsletter-email"
+                      type="email"
+                      name="email"
+                      required
+                      placeholder="Email address"
+                      class="footer-input w-full border-0 bg-transparent py-3 pr-10 font-inter text-sm font-normal leading-5.25 text-[#1E1E1E] outline-none placeholder:text-[#5A6271]"
+                    />
+                    <button
+                      type="submit"
+                      aria-label="Subscribe"
+                      class="footer-submit absolute right-0 top-1/2 grid size-6 -translate-y-1/2 place-items-center text-[#1E1E1E] transition-transform duration-500 hover:-translate-y-[60%] hover:translate-x-0.5"
+                    >
+                      <img
+                        src="assets/images/footer-arrow-icon.svg"
+                        alt=""
+                        class="size-3"
+                        aria-hidden="true"
+                      />
+                    </button>
+                  </div>
+
+                  <label
+                    class="footer-consent mt-4 flex cursor-pointer items-start sm:items-center gap-2 font-inter text-xs sm:text-sm font-normal leading-5.25 text-[#5A6271]"
+                  >
+                    <input
+                      type="checkbox"
+                      name="consent"
+                      class="footer-checkbox mt-0.5 sm:mt-0 size-3.5 shrink-0 cursor-pointer accent-[#1E1E1E]"
+                    />
+                    <span
+                      >I agree to receive updates, news, and exclusive content
+                      via email.</span
+                    >
+                  </label>
+                </form>
+              </div>
+
+              <!-- Social links -->
+              <nav
+                class="footer-socials flex flex-wrap items-center gap-x-5 gap-y-2"
+                aria-label="Social links"
+              >
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener"
+                  class="footer-link footer-social inline-flex items-center gap-1.5 py-[5px] font-inter text-xs xs:text-sm font-normal uppercase leading-5.25 text-[#5A6271]"
+                >
+                  <span class="footer-link-label"
+                    ><span class="footer-link-text">Facebook</span
+                    ><span
+                      class="footer-link-text footer-link-text-clone"
+                      aria-hidden="true"
+                      >Facebook</span
+                    ></span
+                  >
+                  <span class="footer-link-icon">
+                    <img
+                      src="assets/images/footer-arrow-icon.svg"
+                      alt=""
+                      class="footer-link-arrow"
+                      aria-hidden="true"
+                    />
+                    <img
+                      src="assets/images/footer-arrow-icon.svg"
+                      alt=""
+                      class="footer-link-arrow footer-link-arrow-clone"
+                      aria-hidden="true"
+                    />
+                  </span>
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener"
+                  class="footer-link footer-social inline-flex items-center gap-1.5 py-[5px] font-inter text-xs xs:text-sm font-normal uppercase leading-5.25 text-[#5A6271]"
+                >
+                  <span class="footer-link-label"
+                    ><span class="footer-link-text">Instagram</span
+                    ><span
+                      class="footer-link-text footer-link-text-clone"
+                      aria-hidden="true"
+                      >Instagram</span
+                    ></span
+                  >
+                  <span class="footer-link-icon">
+                    <img
+                      src="assets/images/footer-arrow-icon.svg"
+                      alt=""
+                      class="footer-link-arrow"
+                      aria-hidden="true"
+                    />
+                    <img
+                      src="assets/images/footer-arrow-icon.svg"
+                      alt=""
+                      class="footer-link-arrow footer-link-arrow-clone"
+                      aria-hidden="true"
+                    />
+                  </span>
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener"
+                  class="footer-link footer-social inline-flex items-center gap-1.5 py-[5px] font-inter text-xs xs:text-sm font-normal uppercase leading-5.25 text-[#5A6271]"
+                >
+                  <span class="footer-link-label"
+                    ><span class="footer-link-text">LinkedIn</span
+                    ><span
+                      class="footer-link-text footer-link-text-clone"
+                      aria-hidden="true"
+                      >LinkedIn</span
+                    ></span
+                  >
+                  <span class="footer-link-icon">
+                    <img
+                      src="assets/images/footer-arrow-icon.svg"
+                      alt=""
+                      class="footer-link-arrow"
+                      aria-hidden="true"
+                    />
+                    <img
+                      src="assets/images/footer-arrow-icon.svg"
+                      alt=""
+                      class="footer-link-arrow footer-link-arrow-clone"
+                      aria-hidden="true"
+                    />
+                  </span>
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener"
+                  class="footer-link footer-social inline-flex items-center gap-1.5 py-[5px] font-inter text-xs xs:text-sm font-normal uppercase leading-5.25 text-[#5A6271]"
+                >
+                  <span class="footer-link-label"
+                    ><span class="footer-link-text">X</span
+                    ><span
+                      class="footer-link-text footer-link-text-clone"
+                      aria-hidden="true"
+                      >X</span
+                    ></span
+                  >
+                  <span class="footer-link-icon">
+                    <img
+                      src="assets/images/footer-arrow-icon.svg"
+                      alt=""
+                      class="footer-link-arrow"
+                      aria-hidden="true"
+                    />
+                    <img
+                      src="assets/images/footer-arrow-icon.svg"
+                      alt=""
+                      class="footer-link-arrow footer-link-arrow-clone"
+                      aria-hidden="true"
+                    />
+                  </span>
+                </a>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Bottom: brand + copyright -->
+          <div
+            class="footer-bottom mt-16 grid grid-cols-1 gap-10 md:mt-20 lg:grid-cols-2 lg:items-end"
+          >
+            <div class="footer-brand">
+              <a
+                href="/"
+                aria-label="Tormuz home"
+                class="footer-logo inline-block"
+              >
+                <img
+                  src="assets/images/footer-logo.svg"
+                  alt="Tormuz"
+                  class="h-7 w-auto"
+                />
+              </a>
+
+              <div class="footer-brand-text mt-10 lg:mt-12">
+                <p
+                  class="footer-title font-inter text-[24px] font-medium leading-8 tracking-[-0.01em] text-[#1E1E1E] md:text-[28px] md:leading-9"
+                >
+                  Let's Build Future
+                </p>
+                <p
+                  class="footer-description mt-3 max-w-65 font-inter text-sm font-normal leading-5.25 text-[#5A6271]"
+                >
+                  We partner with startups, SaaS companies technology firms,
+                  eCommerce.
+                </p>
+              </div>
+            </div>
+
+            <p
+              class="footer-copyright font-chivo text-sm font-normal uppercase leading-5.25 text-[#5A6271] lg:justify-self-end lg:text-right"
+            >
+              Copyright
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener"
+                class="footer-copyright-link text-[#1E1E1E]"
+                >© Widflow</a
+              >
+              | Conversion by
+              <a
+                href="https://alnoman.vercel.app/"
+                target="_blank"
+                rel="noopener"
+                class="footer-copyright-link text-[#1E1E1E]"
+                >Noman</a
+              >
+            </p>
           </div>
         </div>
       </div>

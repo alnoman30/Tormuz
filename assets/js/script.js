@@ -28,11 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const navbar = document.querySelector(".navbar");
   const toggle = document.querySelector(".menu-toggle");
   const line2 = document.querySelector(".line-2");
-  const menu = document.querySelector(".navbar__menu");
+  const menu = document.querySelector(".navbar-menu");
   const backdrop = document.querySelector(".navbar-backdrop");
 
   const CLOSED_WIDTH = 700;
-  const OPEN_WIDTH = 1200;
+  const OPEN_WIDTH = 1400;
   const LINE_GAP = 12;
 
   let isOpen = false;
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
     toggle.setAttribute("aria-expanded", "true");
     menu.setAttribute("aria-hidden", "false");
 
-    backdrop.classList.remove("pointer-events-none");
+    if (backdrop) backdrop.classList.remove("pointer-events-none");
 
     menuTimeline.timeScale(1).play();
   };
@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     toggle.setAttribute("aria-expanded", "false");
 
-    backdrop.classList.add("pointer-events-none");
+    if (backdrop) backdrop.classList.add("pointer-events-none");
 
     menuTimeline.timeScale(0.8).reverse();
     gsap.set(line2, { clearProps: "visibility" });
@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
     isOpen ? closeMenu() : openMenu();
   });
 
-  backdrop.addEventListener("click", closeMenu);
+  if (backdrop) backdrop.addEventListener("click", closeMenu);
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && isOpen) {
