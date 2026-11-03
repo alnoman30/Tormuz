@@ -338,7 +338,7 @@ html.lenis body {
 }
 
 /* text roll */
-.hero__social-label {
+.hero-social-label {
   position: relative;
   display: block;
   overflow: hidden;

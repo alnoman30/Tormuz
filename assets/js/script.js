@@ -1442,7 +1442,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const cards = gsap.utils.toArray(".rise-item-anim");
     if (!cards.length) return;
 
-    gsap.set(cards, { y: 40, autoAlpha: 0 });
+    gsap.set(cards, { y: 60, autoAlpha: 0 });
 
     ScrollTrigger.batch(cards, {
       start: "top 85%",
