@@ -627,6 +627,12 @@
   .max-w-65 {
     max-width: calc(var(--spacing) * 65);
   }
+  .max-w-82 {
+    max-width: calc(var(--spacing) * 82);
+  }
+  .max-w-82\.5 {
+    max-width: calc(var(--spacing) * 82.5);
+  }
   .max-w-92 {
     max-width: calc(var(--spacing) * 92);
   }
@@ -659,6 +665,9 @@
   }
   .max-w-\[90\%\] {
     max-width: 90%;
+  }
+  .max-w-\[330px\] {
+    max-width: 330px;
   }
   .max-w-none {
     max-width: none;
@@ -1105,6 +1114,12 @@
   .pt-12 {
     padding-top: calc(var(--spacing) * 12);
   }
+  .pt-20 {
+    padding-top: calc(var(--spacing) * 20);
+  }
+  .pt-24 {
+    padding-top: calc(var(--spacing) * 24);
+  }
   .pt-35 {
     padding-top: calc(var(--spacing) * 35);
   }
@@ -1125,6 +1140,9 @@
   }
   .pb-6 {
     padding-bottom: calc(var(--spacing) * 6);
+  }
+  .pb-9 {
+    padding-bottom: calc(var(--spacing) * 9);
   }
   .text-center {
     text-align: center;
@@ -1205,6 +1223,10 @@
     --tw-leading: calc(var(--spacing) * 6.5);
     line-height: calc(var(--spacing) * 6.5);
   }
+  .leading-6\.75 {
+    --tw-leading: calc(var(--spacing) * 6.75);
+    line-height: calc(var(--spacing) * 6.75);
+  }
   .leading-7 {
     --tw-leading: calc(var(--spacing) * 7);
     line-height: calc(var(--spacing) * 7);
@@ -1236,6 +1258,10 @@
   .leading-12 {
     --tw-leading: calc(var(--spacing) * 12);
     line-height: calc(var(--spacing) * 12);
+  }
+  .leading-\[27px\] {
+    --tw-leading: 27px;
+    line-height: 27px;
   }
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
@@ -1991,9 +2017,19 @@
       padding-top: calc(var(--spacing) * 16);
     }
   }
+  .md\:pt-24 {
+    @media (width >= 48rem) {
+      padding-top: calc(var(--spacing) * 24);
+    }
+  }
   .md\:pt-57\.5 {
     @media (width >= 48rem) {
       padding-top: calc(var(--spacing) * 57.5);
+    }
+  }
+  .md\:pb-12\.5 {
+    @media (width >= 48rem) {
+      padding-bottom: calc(var(--spacing) * 12.5);
     }
   }
   .md\:pb-87\.5 {
@@ -2297,6 +2333,16 @@
   .lg\:pt-20 {
     @media (width >= 64rem) {
       padding-top: calc(var(--spacing) * 20);
+    }
+  }
+  .lg\:pt-32 {
+    @media (width >= 64rem) {
+      padding-top: calc(var(--spacing) * 32);
+    }
+  }
+  .lg\:pb-24 {
+    @media (width >= 64rem) {
+      padding-bottom: calc(var(--spacing) * 24);
     }
   }
   .lg\:text-left {
