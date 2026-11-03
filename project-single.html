@@ -1,0 +1,1485 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tormuz</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <link rel="stylesheet" href="assets/css/splide.min.css" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <!-- Backdrop (fades in when menu opens) -->
+    <div
+      class="navbar-backdrop pointer-events-none fixed inset-0 z-40 bg-black/30 opacity-0"
+    ></div>
+    <!-- Navbar -->
+    <header
+      class="site-header fixed inset-x-0 top-6 z-50 flex justify-center px-4 font-inter"
+    >
+      <nav
+        class="navbar w-175 overflow-hidden rounded-lg bg-[#EEF0F6]"
+        aria-label="Main navigation"
+      >
+        <!-- Top bar (fixed 60px height) -->
+        <div
+          class="navbar-bar relative flex h-15 items-center justify-between px-5"
+        >
+          <!-- Toggle -->
+          <button
+            type="button"
+            class="menu-toggle flex h-9 w-15 items-center justify-center rounded"
+            aria-expanded="false"
+            aria-controls="navbar-menu"
+            aria-label="Toggle menu"
+          >
+            <span class="menu-toggle-lines relative block h-3.25 w-10.5">
+              <span
+                class="line-1 absolute left-0 top-0 block h-px w-full bg-neutral-900"
+              ></span>
+              <span
+                class="line-2 absolute left-0 top-3 block h-px w-[70%] bg-neutral-900"
+              ></span>
+            </span>
+          </button>
+
+          <!-- Center logo (PNG) -->
+          <a
+            href="index.html"
+            class="navbar-logo absolute left-1/2 -translate-x-1/2"
+            aria-label="Home"
+          >
+            <img
+              src="assets/images/nav-logo.svg"
+              alt="Tormuz Logo"
+              class="h-8 w-auto"
+            />
+          </a>
+
+          <!-- CTA -->
+          <a href="#" class="navbar-cta px-4 text-base leading-6 text-[#1E1E1E]"
+            >Start</a
+          >
+        </div>
+
+        <!-- Dropdown menu -->
+        <div
+          id="navbar-menu"
+          class="navbar-menu h-0 overflow-hidden"
+          aria-hidden="true"
+        >
+          <div
+            class="navbar-menu-inner grid grid-cols-2 gap-x-4 px-5 pb-3.5 pt-3.5 md:grid-cols-[1fr_194px_320px] lg:grid-cols-[1fr_194px_496px] md:px-6"
+          >
+            <!-- Column 1 -->
+            <ul
+              class="menu-list menu-list-primary flex w-full max-w-42 flex-col"
+            >
+              <li class="menu-item">
+                <a
+                  href="index.html"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Home</span
+                    ><span
+                      class="menu-link-text menu-link-text-clone"
+                      aria-hidden="true"
+                      >Home</span
+                    ></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
+                ></a>
+              </li>
+              <li class="menu-item">
+                <a
+                  href="about.html"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">About</span
+                    ><span
+                      class="menu-link-text menu-link-text-clone"
+                      aria-hidden="true"
+                      >About</span
+                    ></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
+                ></a>
+              </li>
+              <li class="menu-item">
+                <a
+                  href="project.html"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Project</span
+                    ><span
+                      class="menu-link-text menu-link-text-clone"
+                      aria-hidden="true"
+                      >Project</span
+                    ></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
+                ></a>
+              </li>
+              <li class="menu-item">
+                <a
+                  href="service.html"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Service</span
+                    ><span
+                      class="menu-link-text menu-link-text-clone"
+                      aria-hidden="true"
+                      >Service</span
+                    ></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
+                ></a>
+              </li>
+              <li class="menu-item">
+                <a
+                  href="blog.html"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Blog</span
+                    ><span
+                      class="menu-link-text menu-link-text-clone"
+                      aria-hidden="true"
+                      >Blog</span
+                    ></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
+                ></a>
+              </li>
+              <li class="menu-item">
+                <a
+                  href="team.html"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Team</span
+                    ><span
+                      class="menu-link-text menu-link-text-clone"
+                      aria-hidden="true"
+                      >Team</span
+                    ></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
+                ></a>
+              </li>
+              <li class="menu-item">
+                <a
+                  href="contact.html"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Contact</span
+                    ><span
+                      class="menu-link-text menu-link-text-clone"
+                      aria-hidden="true"
+                      >Contact</span
+                    ></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
+                ></a>
+              </li>
+            </ul>
+
+            <!-- Column 2 -->
+            <ul
+              class="menu-list menu-list-secondary flex w-full max-w-42 flex-col"
+            >
+              <li class="menu-item">
+                <a
+                  href="project-single.html"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Project Single</span
+                    ><span
+                      class="menu-link-text menu-link-text-clone"
+                      aria-hidden="true"
+                      >Project Single</span
+                    ></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
+                ></a>
+              </li>
+              <li class="menu-item">
+                <a
+                  href="#"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Service Single</span
+                    ><span
+                      class="menu-link-text menu-link-text-clone"
+                      aria-hidden="true"
+                      >Service Single</span
+                    ></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
+                ></a>
+              </li>
+              <li class="menu-item">
+                <a
+                  href="#"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Team Single</span
+                    ><span
+                      class="menu-link-text menu-link-text-clone"
+                      aria-hidden="true"
+                      >Team Single</span
+                    ></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
+                ></a>
+              </li>
+              <li class="menu-item">
+                <a
+                  href="#"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Blog Single</span
+                    ><span
+                      class="menu-link-text menu-link-text-clone"
+                      aria-hidden="true"
+                      >Blog Single</span
+                    ></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
+                ></a>
+              </li>
+              <li class="menu-item">
+                <a
+                  href="#"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Style Guide</span
+                    ><span
+                      class="menu-link-text menu-link-text-clone"
+                      aria-hidden="true"
+                      >Style Guide</span
+                    ></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
+                ></a>
+              </li>
+              <li class="menu-item">
+                <a
+                  href="#"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Change log</span
+                    ><span
+                      class="menu-link-text menu-link-text-clone"
+                      aria-hidden="true"
+                      >Change log</span
+                    ></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
+                ></a>
+              </li>
+              <li class="menu-item">
+                <a
+                  href="#"
+                  class="menu-link group flex items-center justify-between py-2.5 text-base leading-6 text-[#1E1E1E]"
+                  ><span class="menu-link-label"
+                    ><span class="menu-link-text">Licenses</span
+                    ><span
+                      class="menu-link-text menu-link-text-clone"
+                      aria-hidden="true"
+                      >Licenses</span
+                    ></span
+                  ><span class="menu-link-icon"
+                    ><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow w-full h-full"
+                      aria-hidden="true" /><img
+                      src="assets/images/menu-arrow-icon.svg"
+                      alt=""
+                      class="menu-link-arrow menu-link-arrow-clone h-full w-full"
+                      aria-hidden="true" /></span
+                ></a>
+              </li>
+            </ul>
+
+            <!-- Featured image (PNG) -->
+            <div
+              class="menu-media col-span-2 mt-4 h-52 overflow-hidden rounded-lg md:col-span-1 md:mb-2.5 md:mt-1.75 md:h-auto"
+            >
+              <img
+                src="assets/images/navbar-featured.webp"
+                alt="Featured"
+                class="menu-media-image h-full w-full object-contain hover:scale-105 ease-out transition-all duration-500"
+              />
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Project details section -->
+    <section
+      id="project-single"
+      class="bg-[#FFFFFF] pt-32 sm:pt-40 md:pt-48 lg:pt-52 pb-12 md:pb-16 lg:pb-24"
+    >
+      <div class="container">
+        <!-- Title row -->
+        <div class="flex items-start justify-between gap-4">
+          <h1
+            class="heading-reveal font-inter text-[#1E1E1E] text-[38px] md:text-[48px] lg:text-[60px] font-medium leading-12 md:leading-14 lg:leading-16.5"
+          >
+            Digital Transformation
+          </h1>
+          <span
+            class="font-inter text-[#5A6271] text-sm font-normal leading-5.25 mt-2 shrink-0"
+            >06.26</span
+          >
+        </div>
+
+        <!-- Hero image -->
+        <div
+          class="mt-5 md:mt-8 w-full rounded-[10px] sm:rounded-[20px] md:rounded-3xl lg:rounded-4xl overflow-hidden"
+        >
+          <img
+            src="assets/images/single-project-image-1.webp"
+            alt="Digital Transformation"
+            class="image-reveal w-full h-full object-contain hover:scale-105 transition-all ease-out duration-700"
+          />
+        </div>
+
+        <!-- Project description -->
+        <div class="rise-item-anim grid grid-cols-12 mt-8 md:mt-12">
+          <div class="col-span-12 lg:col-start-2 lg:col-span-9 px-7 lg:px-0">
+            <h2
+              class="font-inter text-[#1E1E1E] text-lg sm:text-xl md:text-[22px] lg:text-2xl font-medium leading-5 md:leading-6.5"
+            >
+              Project Description
+            </h2>
+            <div
+              class="space-y-2 font-inter text-[#696866] text-base md:text-lg font-normal leading-6 md:leading-[27px] mt-2 md:mt-4"
+            >
+              <p>
+                At Tormuz, every project begins with a clear understanding of
+                our client's vision, market challenges, and long-term
+                objectives. We develop scalable strategies, innovative
+                solutions, and efficient business frameworks that support
+                sustainable growth without compromising quality. By planning for
+                future opportunities from the very beginning, we help startups
+                and growing businesses adapt, expand, and succeed in an
+                ever-changing competitive landscape.
+              </p>
+            </div>
+
+            <!-- Meta -->
+            <div
+              class="mt-6 md:mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 font-chivo text-[#5A6271] text-sm font-normal leading-[21px] uppercase"
+            >
+              <span>Client <span class="">· Tormuz</span></span>
+              <span>Role <span class="">· Strategy</span></span>
+              <span>Year <span class="">· 2026</span></span>
+              <span>Type <span class="">· Brand Development</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wide image -->
+        <div
+          class="mt-6 md:mt-10 w-full rounded-[10px] sm:rounded-[20px] md:rounded-3xl lg:rounded-4xl overflow-hidden"
+        >
+          <img
+            src="assets/images/single-project-image-2.webp"
+            alt="Project visual"
+            class="image-reveal w-full h-full object-contain hover:scale-105 transition-all ease-out duration-700"
+          />
+        </div>
+
+        <!-- Two images -->
+        <div class="grid grid-cols-2 gap-2 md:gap-4 mt-2 md:mt-4">
+          <div
+            class="w-full rounded-[10px] sm:rounded-[20px] md:rounded-3xl lg:rounded-4xl overflow-hidden bg-[#EEF0F6]"
+          >
+            <img
+              src="assets/images/single-project-image-3.webp"
+              alt="Project collage"
+              class="image-reveal w-full h-full object-contain hover:scale-105 transition-all ease-out duration-700"
+            />
+          </div>
+          <div
+            class="w-full rounded-[10px] sm:rounded-[20px] md:rounded-3xl lg:rounded-4xl overflow-hidden bg-[#EEF0F6]"
+          >
+            <img
+              src="assets/images/single-project-image-4.webp"
+              alt="Project motion"
+              class="image-reveal w-full h-full object-contain hover:scale-105 transition-all ease-out duration-700"
+            />
+          </div>
+        </div>
+
+        <!-- Challenges + Execution -->
+        <div class="rise-item-anim grid grid-cols-12 mt-8 md:mt-12">
+          <div class="col-span-12 lg:col-start-2 lg:col-span-9 px-7 lg:px-0">
+            <h2
+              class="font-inter text-[#1E1E1E] text-lg sm:text-xl md:text-[22px] lg:text-2xl font-medium leading-5 md:leading-6.5"
+            >
+              The Challenges
+            </h2>
+            <div
+              class="space-y-2 font-inter text-[#696866] text-base md:text-lg font-normal leading-6 md:leading-6.75 mt-2 md:mt-4"
+            >
+              <p>
+                We always begin by understanding our client's business goals,
+                market dynamics, and growth opportunities. These insights help
+                us develop a tailored strategy and implement scalable solutions.
+              </p>
+            </div>
+            <ul
+              class="mt-2 md:mt-4 flex flex-col gap-1.5 md:gap-3 list-disc pl-4 font-inter text-[#696866] text-base md:text-lg font-normal leading-6 md:leading-6.75"
+            >
+              <li>
+                We always begin by understanding our client's business goals,
+                market challenges, and growth opportunities. These insights help
+                us develop a tailored strategy and implement scalable solutions.
+              </li>
+              <li>
+                Every engagement starts with in-depth research to understand
+                business objectives, customer needs, and market conditions. This
+                foundation enables us to deliver tailored strategies that create
+                measurable impact.
+              </li>
+            </ul>
+
+            <h2
+              class="font-inter text-[#1E1E1E] text-lg sm:text-xl md:text-[22px] lg:text-2xl font-medium leading-5 md:leading-6.5 mt-6 md:mt-10"
+            >
+              Execution
+            </h2>
+            <div
+              class="space-y-2 font-inter text-[#696866] text-base md:text-lg font-normal leading-6 md:leading-[27px] mt-2 md:mt-4"
+            >
+              <p>
+                Throughout the project, our team collaborated closely with
+                stakeholders to align business objectives, validate key
+                decisions, and implement scalable solutions. By combining market
+                insights with innovative thinking, we delivered a solution that
+                aligned with the client's vision while supporting long-term
+                business growth.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Frequently Asked Questions -->
+    <section
+      id="services"
+      class="section home-faq relative flex items-center overflow-hidden bg-white py-9 md:py-12.5"
+    >
+      <div class="faq-inner w-full">
+        <div class="container">
+          <!-- Title area -->
+          <div class="faq-title-wrap relative">
+            <!-- Background shade image -->
+            <img
+              src="assets/images/faq-bg-shade.webp"
+              alt=""
+              aria-hidden="true"
+              class="pointer-events-none absolute left-1/2 top-0 z-0 w-full max-w-none -translate-x-1/2 select-none object-contain"
+            />
+
+            <div
+              class="faq-title _01 relative z-10 flex items-center justify-between font-chivo text-sm font-normal leading-5.25 uppercase text-[#5A6271] mb-7.5 md:mb-12.5 lg:mb-20"
+            >
+              <div class="faq-title-left">
+                <div data-animation="slide-up-reveal">
+                  Frequently Asked Questions
+                </div>
+              </div>
+
+              <div data-animation="slide-up-reveal" class="faq-title-right">
+                <div>Est. 2026</div>
+              </div>
+            </div>
+
+            <!-- Heading -->
+            <div class="faq-title-02 relative z-10 mb-6 md:mb-10">
+              <h2
+                class="heading-reveal text-center font-inter text-[#1E1E1E] text-[38px] md:text-[48px] lg:text-[60px] font-medium leading-12 md:leading-14 lg:leading-16.5"
+              >
+                Answers You Need!
+              </h2>
+            </div>
+          </div>
+
+          <!-- ================= FAQ list ================= -->
+          <div class="faq-list relative z-10 mx-auto w-full max-w-200">
+            <!-- 01 (open by default) -->
+            <div class="faq-item is-open">
+              <h3>
+                <button
+                  type="button"
+                  id="faq-trigger-1"
+                  aria-expanded="true"
+                  aria-controls="faq-panel-1"
+                  class="faq-trigger flex w-full items-center justify-between gap-6 border-b border-[#D7DCE8] py-4.5 text-left font-inter text-base font-medium leading-6 text-[#1E1E1E]"
+                >
+                  <span>01. How does Tormuz help startups grow?</span>
+                  <svg
+                    class="faq-icon size-5 shrink-0"
+                    style="transform: rotate(180deg)"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M5 15l7-7 7 7"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </h3>
+              <div
+                id="faq-panel-1"
+                role="region"
+                aria-labelledby="faq-trigger-1"
+                class="faq-panel overflow-hidden"
+              >
+                <p
+                  class="faq-answer max-w-155 pt-5 font-inter text-sm font-normal leading-6 text-[#5A6271]"
+                >
+                  Tormuz helps startups grow by combining strategic planning,
+                  market insights, branding, and technology-driven solutions. We
+                  work closely with founders to validate ideas, improve
+                  operations, and build scalable business models that support
+                  sustainable growth.
+                </p>
+              </div>
+            </div>
+
+            <!-- 02 -->
+            <div class="faq-item">
+              <h3>
+                <button
+                  type="button"
+                  id="faq-trigger-2"
+                  aria-expanded="false"
+                  aria-controls="faq-panel-2"
+                  class="faq-trigger flex w-full items-center justify-between gap-6 border-b border-[#D7DCE8] py-4.5 text-left font-inter text-base font-medium leading-6 text-[#1E1E1E]"
+                >
+                  <span>02. What services do you provide for businesses?</span>
+                  <svg
+                    class="faq-icon size-5 shrink-0"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M5 15l7-7 7 7"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </h3>
+              <div
+                id="faq-panel-2"
+                role="region"
+                aria-labelledby="faq-trigger-2"
+                class="faq-panel h-0 invisible overflow-hidden"
+              >
+                <p
+                  class="faq-answer max-w-155 pt-5 font-inter text-sm font-normal leading-6 text-[#5A6271]"
+                >
+                  We offer end-to-end startup support, including brand strategy,
+                  product and web design, development, growth marketing, and
+                  operational consulting, so you can get everything you need
+                  from one partner.
+                </p>
+              </div>
+            </div>
+
+            <!-- 03 -->
+            <div class="faq-item">
+              <h3>
+                <button
+                  type="button"
+                  id="faq-trigger-3"
+                  aria-expanded="false"
+                  aria-controls="faq-panel-3"
+                  class="faq-trigger flex w-full items-center justify-between gap-6 border-b border-[#D7DCE8] py-4.5 text-left font-inter text-base font-medium leading-6 text-[#1E1E1E]"
+                >
+                  <span
+                    >03. Do you create customized solutions for every
+                    client?</span
+                  >
+                  <svg
+                    class="faq-icon size-5 shrink-0"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M5 15l7-7 7 7"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </h3>
+              <div
+                id="faq-panel-3"
+                role="region"
+                aria-labelledby="faq-trigger-3"
+                class="faq-panel h-0 invisible overflow-hidden"
+              >
+                <p
+                  class="faq-answer max-w-155 pt-5 font-inter text-sm font-normal leading-6 text-[#5A6271]"
+                >
+                  Yes. Every engagement starts with your goals, market, and
+                  constraints. We tailor our approach, deliverables, and
+                  timelines to fit your business rather than applying a
+                  one-size-fits-all package.
+                </p>
+              </div>
+            </div>
+
+            <!-- 04 -->
+            <div class="faq-item">
+              <h3>
+                <button
+                  type="button"
+                  id="faq-trigger-4"
+                  aria-expanded="false"
+                  aria-controls="faq-panel-4"
+                  class="faq-trigger flex w-full items-center justify-between gap-6 border-b border-[#D7DCE8] py-4.5 text-left font-inter text-base font-medium leading-6 text-[#1E1E1E]"
+                >
+                  <span
+                    >04. Do you provide ongoing support after project
+                    completion?</span
+                  >
+                  <svg
+                    class="faq-icon size-5 shrink-0"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M5 15l7-7 7 7"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </h3>
+              <div
+                id="faq-panel-4"
+                role="region"
+                aria-labelledby="faq-trigger-4"
+                class="faq-panel h-0 invisible overflow-hidden"
+              >
+                <p
+                  class="faq-answer max-w-155 pt-5 font-inter text-sm font-normal leading-6 text-[#5A6271]"
+                >
+                  Absolutely. After launch we offer flexible support plans
+                  covering maintenance, performance monitoring, optimization,
+                  and ongoing strategic guidance as your business evolves.
+                </p>
+              </div>
+            </div>
+
+            <!-- 05 -->
+            <div class="faq-item">
+              <h3>
+                <button
+                  type="button"
+                  id="faq-trigger-5"
+                  aria-expanded="false"
+                  aria-controls="faq-panel-5"
+                  class="faq-trigger flex w-full items-center justify-between gap-6 border-b border-[#D7DCE8] py-4.5 text-left font-inter text-base font-medium leading-6 text-[#1E1E1E]"
+                >
+                  <span>05. How long does a typical project take?</span>
+                  <svg
+                    class="faq-icon size-5 shrink-0"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M5 15l7-7 7 7"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </h3>
+              <div
+                id="faq-panel-5"
+                role="region"
+                aria-labelledby="faq-trigger-5"
+                class="faq-panel h-0 invisible overflow-hidden"
+              >
+                <p
+                  class="faq-answer max-w-155 pt-5 font-inter text-sm font-normal leading-6 text-[#5A6271]"
+                >
+                  It depends on scope. A focused branding or website project
+                  typically takes 4 to 8 weeks, while larger product builds can
+                  take 3 to 6 months. We share a clear timeline before we start.
+                </p>
+              </div>
+            </div>
+
+            <!-- 06 -->
+            <div class="faq-item">
+              <h3>
+                <button
+                  type="button"
+                  id="faq-trigger-6"
+                  aria-expanded="false"
+                  aria-controls="faq-panel-6"
+                  class="faq-trigger flex w-full items-center justify-between gap-6 border-b border-[#D7DCE8] py-4.5 text-left font-inter text-base font-medium leading-6 text-[#1E1E1E]"
+                >
+                  <span>06. Which industries do you work with?</span>
+                  <svg
+                    class="faq-icon size-5 shrink-0"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M5 15l7-7 7 7"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </h3>
+              <div
+                id="faq-panel-6"
+                role="region"
+                aria-labelledby="faq-trigger-6"
+                class="faq-panel h-0 invisible overflow-hidden"
+              >
+                <p
+                  class="faq-answer max-w-155 pt-5 font-inter text-sm font-normal leading-6 text-[#5A6271]"
+                >
+                  We work with early-stage and growing companies across SaaS,
+                  fintech, e-commerce, health, education, and creative
+                  industries, and we bring the same strategic approach to each.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA section -->
+    <section
+      id="cta"
+      class="section home-cta bg-[#EEF0F6] pt-12 md:pt-16 lg:pt-20 xl:pt-24"
+    >
+      <div class="container">
+        <!-- Dark Card Container -->
+        <div
+          class="cta-card relative flex flex-col items-center justify-center overflow-hidden rounded-4xl bg-[#191919] text-center text-white px-3.75 py-14 sm:py-17.5 md:py-20 lg:py-25"
+        >
+          <!-- CTA Content Wrapper -->
+          <div
+            class="flex w-full max-w-128.75 flex-col gap-4 md:gap-6 lg:gap-7 items-center"
+          >
+            <!-- Subtitle Label -->
+            <p
+              class="font-inter text-[#FFFFFF] text-sm font-normal leading-5.25 uppercase"
+            >
+              Let's Connect
+            </p>
+
+            <!-- Main Headline -->
+            <h2
+              class="heading-reveal font-inter text-white text-[38px] md:text-[48px] lg:text-[60px] font-medium leading-10.5 md:leading-13.5 lg:leading-16.5"
+            >
+              Ready to Bring Your Vision to Life?
+            </h2>
+
+            <!-- CTA Link with Underline & Plus Icon -->
+            <a
+              href="#"
+              class="cubic-btn relative group inline-flex items-center gap-1.5 font-inter text-white text-base font-medium leading-6 pb-0.5 transition-colors"
+            >
+              <!-- Text Roll Container -->
+              <span class="btn-text relative block overflow-hidden py-1">
+                <!-- Original Text -->
+                <span class="original block split-text"> Get In Touch </span>
+
+                <!-- Cloned Text -->
+                <span class="clone absolute left-0 top-1 block split-text">
+                  Get In Touch
+                </span>
+              </span>
+
+              <!-- Plus Icon -->
+              <span class="plus-icon inline-block">
+                <img
+                  src="assets/images/plus-icon-white.svg"
+                  alt="plus icon"
+                  class="w-full h-full object-contain shrink-0"
+                />
+              </span>
+
+              <!-- Bottom Border Line -->
+              <span
+                class="absolute bottom-0 left-0 h-px w-7 bg-white transition-all duration-600 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:w-full"
+              ></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer section -->
+    <section class="rise-item-anim footer bg-[#EEF0F6] py-6 md:py-10">
+      <div class="container">
+        <!-- Card (shape image as background) -->
+        <div
+          class="footer-card relative overflow-hidden rounded-3xl bg-white p-6 md:rounded-[40px] md:p-12 lg:p-17.5"
+          style="
+            background-image: url(&quot;assets/images/footer-inner-shape.webp&quot;);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+          "
+        >
+          <!-- Top: menus + newsletter -->
+          <div
+            class="footer-top grid grid-cols-1 gap-12 lg:grid-cols-[1fr_440px] lg:gap-0"
+          >
+            <!-- Menus (3 columns intact on mobile with adaptive mobile gap, exact original sizes on desktop) -->
+            <div
+              class="footer-menus grid grid-cols-3 gap-x-2 gap-y-10 sm:gap-x-6 lg:grid-cols-[196px_220px_1fr]"
+            >
+              <!-- Main page -->
+              <div class="footer-menu-group">
+                <h3
+                  class="footer-menu-title mb-3 font-chivo text-xs font-normal uppercase leading-5 text-[#1E1E1E] sm:text-sm sm:leading-5.25"
+                >
+                  Main Page
+                </h3>
+                <ul class="footer-menu-list">
+                  <li>
+                    <a
+                      href="about.html"
+                      class="footer-link inline-block py-1.25 font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">About</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >About</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="contact.html"
+                      class="footer-link inline-block py-1.25 font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Contact</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Contact</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="project.html"
+                      class="footer-link inline-block py-1.25 font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Project</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Project</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="service.html"
+                      class="footer-link inline-block py-1.25 font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Service</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Service</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="blog.html"
+                      class="footer-link inline-block py-1.25 font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Blog</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Blog</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Inner page -->
+              <div class="footer-menu-group">
+                <h3
+                  class="footer-menu-title mb-3 font-chivo text-xs font-normal uppercase leading-5 text-[#1E1E1E] sm:text-sm sm:leading-5.25"
+                >
+                  Inner Page
+                </h3>
+                <ul class="footer-menu-list">
+                  <li>
+                    <a
+                      href="project-single.html"
+                      class="footer-link inline-block py-1.25 font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Project Single</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Project Single</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="service-single.html"
+                      class="footer-link inline-block py-1.25 font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Service Single</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Service Single</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="blog-single.html"
+                      class="footer-link inline-block py-1.25 font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Blog Single</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Blog Single</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="team-single.html"
+                      class="footer-link inline-block py-1.25 font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Team Single</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Team Single</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="footer-link inline-block py-1.25 font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">404</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >404</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Utility page -->
+              <div class="footer-menu-group">
+                <h3
+                  class="footer-menu-title mb-3 font-chivo text-xs font-normal uppercase leading-5 text-[#1E1E1E] sm:text-sm sm:leading-5.25"
+                >
+                  Utility Page
+                </h3>
+                <ul class="footer-menu-list">
+                  <li>
+                    <a
+                      href="#"
+                      class="footer-link inline-block py-1.25 font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Style Guide</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Style Guide</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="footer-link inline-block py-1.25 font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Changelog</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Changelog</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="footer-link inline-block py-1.25 font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Licenses</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Licenses</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="footer-link inline-block py-1.25 font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Password</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Password</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="footer-link inline-block py-1.25 font-inter text-xs font-normal leading-5 text-[#5A6271] xs:text-sm sm:text-base sm:leading-6"
+                    >
+                      <span class="footer-link-label"
+                        ><span class="footer-link-text">Instructions</span
+                        ><span
+                          class="footer-link-text footer-link-text-clone"
+                          aria-hidden="true"
+                          >Instructions</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Newsletter + socials -->
+            <div
+              class="footer-newsletter flex flex-col justify-between gap-10 lg:gap-0"
+            >
+              <div class="footer-newsletter-form">
+                <p
+                  class="footer-newsletter-title font-inter text-base font-medium leading-6 text-[#1E1E1E]"
+                >
+                  Subscribe to Our Newsletter
+                </p>
+
+                <form class="footer-form mt-4" action="#" method="get">
+                  <div
+                    class="footer-form-field relative flex items-center border-b border-[#D7DCE8]"
+                  >
+                    <label for="newsletter-email" class="sr-only"
+                      >Email address</label
+                    >
+                    <input
+                      id="newsletter-email"
+                      type="email"
+                      name="email"
+                      required
+                      placeholder="Email address"
+                      class="footer-input w-full border-0 bg-transparent py-3 pr-10 font-inter text-sm font-normal leading-5.25 text-[#1E1E1E] outline-none placeholder:text-[#5A6271]"
+                    />
+                    <button
+                      type="submit"
+                      aria-label="Subscribe"
+                      class="footer-submit absolute right-0 top-1/2 grid size-6 -translate-y-1/2 place-items-center text-[#1E1E1E] transition-transform duration-500 hover:translate-y-[-60%] hover:translate-x-0.5"
+                    >
+                      <img
+                        src="assets/images/footer-arrow-icon.svg"
+                        alt=""
+                        class="size-3"
+                        aria-hidden="true"
+                      />
+                    </button>
+                  </div>
+
+                  <label
+                    class="footer-consent mt-4 flex cursor-pointer items-start sm:items-center gap-2 font-inter text-xs sm:text-sm font-normal leading-5.25 text-[#5A6271]"
+                  >
+                    <input
+                      type="checkbox"
+                      name="consent"
+                      class="footer-checkbox mt-0.5 sm:mt-0 size-3.5 shrink-0 cursor-pointer accent-[#1E1E1E]"
+                    />
+                    <span
+                      >I agree to receive updates, news, and exclusive content
+                      via email.</span
+                    >
+                  </label>
+                </form>
+              </div>
+
+              <!-- Social links -->
+              <nav
+                class="footer-socials flex flex-wrap items-center gap-x-5 gap-y-2"
+                aria-label="Social links"
+              >
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener"
+                  class="footer-link footer-social inline-flex items-center gap-1.5 py-1.25 font-inter text-xs xs:text-sm font-normal uppercase leading-5.25 text-[#5A6271]"
+                >
+                  <span class="footer-link-label"
+                    ><span class="footer-link-text">Facebook</span
+                    ><span
+                      class="footer-link-text footer-link-text-clone"
+                      aria-hidden="true"
+                      >Facebook</span
+                    ></span
+                  >
+                  <span class="footer-link-icon">
+                    <img
+                      src="assets/images/footer-arrow-icon.svg"
+                      alt=""
+                      class="footer-link-arrow"
+                      aria-hidden="true"
+                    />
+                    <img
+                      src="assets/images/footer-arrow-icon.svg"
+                      alt=""
+                      class="footer-link-arrow footer-link-arrow-clone"
+                      aria-hidden="true"
+                    />
+                  </span>
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener"
+                  class="footer-link footer-social inline-flex items-center gap-1.5 py-1.25 font-inter text-xs xs:text-sm font-normal uppercase leading-5.25 text-[#5A6271]"
+                >
+                  <span class="footer-link-label"
+                    ><span class="footer-link-text">Instagram</span
+                    ><span
+                      class="footer-link-text footer-link-text-clone"
+                      aria-hidden="true"
+                      >Instagram</span
+                    ></span
+                  >
+                  <span class="footer-link-icon">
+                    <img
+                      src="assets/images/footer-arrow-icon.svg"
+                      alt=""
+                      class="footer-link-arrow"
+                      aria-hidden="true"
+                    />
+                    <img
+                      src="assets/images/footer-arrow-icon.svg"
+                      alt=""
+                      class="footer-link-arrow footer-link-arrow-clone"
+                      aria-hidden="true"
+                    />
+                  </span>
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener"
+                  class="footer-link footer-social inline-flex items-center gap-1.5 py-1.25 font-inter text-xs xs:text-sm font-normal uppercase leading-5.25 text-[#5A6271]"
+                >
+                  <span class="footer-link-label"
+                    ><span class="footer-link-text">LinkedIn</span
+                    ><span
+                      class="footer-link-text footer-link-text-clone"
+                      aria-hidden="true"
+                      >LinkedIn</span
+                    ></span
+                  >
+                  <span class="footer-link-icon">
+                    <img
+                      src="assets/images/footer-arrow-icon.svg"
+                      alt=""
+                      class="footer-link-arrow"
+                      aria-hidden="true"
+                    />
+                    <img
+                      src="assets/images/footer-arrow-icon.svg"
+                      alt=""
+                      class="footer-link-arrow footer-link-arrow-clone"
+                      aria-hidden="true"
+                    />
+                  </span>
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener"
+                  class="footer-link footer-social inline-flex items-center gap-1.5 py-1.25 font-inter text-xs xs:text-sm font-normal uppercase leading-5.25 text-[#5A6271]"
+                >
+                  <span class="footer-link-label"
+                    ><span class="footer-link-text">X</span
+                    ><span
+                      class="footer-link-text footer-link-text-clone"
+                      aria-hidden="true"
+                      >X</span
+                    ></span
+                  >
+                  <span class="footer-link-icon">
+                    <img
+                      src="assets/images/footer-arrow-icon.svg"
+                      alt=""
+                      class="footer-link-arrow"
+                      aria-hidden="true"
+                    />
+                    <img
+                      src="assets/images/footer-arrow-icon.svg"
+                      alt=""
+                      class="footer-link-arrow footer-link-arrow-clone"
+                      aria-hidden="true"
+                    />
+                  </span>
+                </a>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Bottom: brand + copyright -->
+          <div
+            class="footer-bottom mt-16 grid grid-cols-1 gap-10 md:mt-20 lg:grid-cols-2 lg:items-end"
+          >
+            <div class="footer-brand">
+              <a
+                href="/"
+                aria-label="Tormuz home"
+                class="footer-logo inline-block"
+              >
+                <img
+                  src="assets/images/footer-logo.svg"
+                  alt="Tormuz"
+                  class="h-7 w-auto"
+                />
+              </a>
+
+              <div class="footer-brand-text mt-10 lg:mt-12">
+                <p
+                  class="footer-title font-inter text-[24px] font-medium leading-8 tracking-[-0.01em] text-[#1E1E1E] md:text-[28px] md:leading-9"
+                >
+                  Let's Build Future
+                </p>
+                <p
+                  class="footer-description mt-3 max-w-65 font-inter text-sm font-normal leading-5.25 text-[#5A6271]"
+                >
+                  We partner with startups, SaaS companies technology firms,
+                  eCommerce.
+                </p>
+              </div>
+            </div>
+
+            <p
+              class="footer-copyright font-chivo text-sm font-normal uppercase leading-5.25 text-[#5A6271] lg:justify-self-end lg:text-right"
+            >
+              Copyright
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener"
+                class="footer-copyright-link text-[#1E1E1E]"
+                >© Widflow</a
+              >
+              | Conversion by
+              <a
+                href="https://alnoman.vercel.app/"
+                target="_blank"
+                rel="noopener"
+                class="footer-copyright-link text-[#1E1E1E]"
+                >Noman</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/SplitText.min.js"></script>
+    <script src="assets/js/splide.min.js"></script>
+    <script src="assets/js/splide-extension-auto-scroll.min.js"></script>
+    <script src="assets/js/lenis.min.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
