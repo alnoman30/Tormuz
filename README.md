@@ -38,7 +38,7 @@ A clean, responsive, multi-page website for startups, SaaS companies and digital
   <tr>
     <td><img src="https://alnoman30.github.io/Tormuz/assets/images/team-member-2.webp" alt="Team" /></td>
     <td><img src="https://alnoman30.github.io/Tormuz/assets/images/blog-thumbnail-1.webp" alt="Blog thumbnail" /></td>
-    <td><img src="https://alnoman30.github.io/Tormuz/assets/images/single-project-image-4.webp" alt="Service thumbnail" /></td>
+    <td><img src="https://alnoman30.github.io/Tormuz/assets/images/blog-thumbnail-6.webp" alt="Service thumbnail" /></td>
   </tr>
 </table>
 
