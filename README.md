@@ -175,18 +175,6 @@ Vite will print a local URL, usually `http://localhost:5173`. Open it in your br
 4. **Styles:** edit `assets/css/tailwind.css`, then run `npm run build` to regenerate `style.css`.
 5. **Social and contact links:** update the placeholder `#` links in the footer and contact sections.
 
-## Deployment
-
-### GitHub Pages
-
-1. Push your changes to the `main` branch.
-2. Go to **Settings → Pages** in your repository.
-3. Under **Build and deployment**, choose **Deploy from a branch**.
-4. Select the `main` branch and the `/ (root)` folder, then click **Save**.
-5. Your site will be live at `https://<your-username>.github.io/Tormuz/`.
-
-Because the site is static, it also deploys easily to **Netlify**, **Vercel**, **Cloudflare Pages** or any static host.
-
 ## Contributing
 
 Contributions, issues and feature requests are welcome.
