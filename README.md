@@ -23,7 +23,7 @@ A clean, responsive, multi-page website for startups, SaaS companies and digital
 
 <div align="center">
 
-[![Tormuz Preview](https://alnoman30.github.io/Tormuz/assets/images/navbar-featured.webp)](https://alnoman30.github.io/Tormuz/)
+[![Tormuz Preview](https://alnoman30.github.io/Tormuz/assets/images/preview/thumbnail.png)](https://alnoman30.github.io/Tormuz/)
 
 **[Open the live site](https://alnoman30.github.io/Tormuz/)**
 
@@ -31,14 +31,14 @@ A clean, responsive, multi-page website for startups, SaaS companies and digital
 
 <table>
   <tr>
-    <td><img src="https://alnoman30.github.io/Tormuz/assets/images/banner-slider-1.webp" alt="Banner 1" /></td>
+    <td><img src="https://alnoman30.github.io/Tormuz/assets/images/banner-slider-6.webp" alt="Banner 1" /></td>
     <td><img src="https://alnoman30.github.io/Tormuz/assets/images/banner-slider-2.webp" alt="Banner 2" /></td>
     <td><img src="https://alnoman30.github.io/Tormuz/assets/images/banner-slider-4.webp" alt="Banner 3" /></td>
   </tr>
   <tr>
-    <td><img src="https://alnoman30.github.io/Tormuz/assets/images/service-thumbnail-1.webp" alt="Service thumbnail" /></td>
+    <td><img src="https://alnoman30.github.io/Tormuz/assets/images/team-member-2.webp" alt="Team" /></td>
     <td><img src="https://alnoman30.github.io/Tormuz/assets/images/blog-thumbnail-1.webp" alt="Blog thumbnail" /></td>
-    <td><img src="https://alnoman30.github.io/Tormuz/assets/images/service-thumbnail-3.webp" alt="Service thumbnail" /></td>
+    <td><img src="https://alnoman30.github.io/Tormuz/assets/images/single-project-image-4.webp" alt="Service thumbnail" /></td>
   </tr>
 </table>
 
